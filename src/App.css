@@ -1,0 +1,57 @@
+*{
+  font-family: "Nunito";
+}
+
+.top-bg{
+  background: linear-gradient(to right, #1B2746, #1D2129);
+}
+
+.gradient-btn{
+  background: linear-gradient(180deg,rgba(40,106,255,.1),rgba(40,106,255,.4) 94.78%,#286aff 94.79%);
+}
+
+.slick-arrow .slick-next, .slick-arrow .slick-prev{
+  background: red !important;
+  display: block;
+}
+
+.slick-list {margin: 0 -10px;}
+.slick-slide>div {padding: 0 10px;}
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+
+.custom-arrow-next {
+  position: absolute;
+  right: -0.8% !important;
+  top: 35% !important;
+  font-size: 40px !important;
+  z-index: 1;
+  background-color: rgb(31 41 55 / 0.3) !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  opacity: 0;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.custom-arrow-prev{
+  position: absolute;
+  left: -0.8% !important;
+  top: 35% !important;
+  font-size: 35px !important;
+  z-index: 1;
+  background-color: rgb(31 41 55 / 0.3) !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  opacity: 0;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.slick-slider:hover .custom-arrow-next, .slick-slider:hover .custom-arrow-prev {
+  opacity: 1 !important;
+  transition: .5s;
+}
