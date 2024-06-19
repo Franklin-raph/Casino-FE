@@ -13,7 +13,7 @@ function App() {
       <TopNav />
       <div className='flex items-start'>
         <SideNav />
-        <div className='pt-[5rem] bg-primary-color w-[82%] pl-[3rem] px-[4rem] ml-auto'>
+        <div className='pt-[5rem] bg-primary-color w-[82%] px-[1.5rem] ml-auto'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />

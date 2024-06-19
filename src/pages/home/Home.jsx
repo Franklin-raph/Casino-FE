@@ -57,7 +57,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className='mt-8'>
       <Slider {...settings}>
         <div className='rounded-[6px]'>
           <img src="./images/quk.avif" className='rounded-[6px] h-full object-contain' alt="" />
