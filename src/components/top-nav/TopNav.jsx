@@ -10,12 +10,14 @@ import { MdHistoryEdu } from "react-icons/md";
 import { BsClockHistory } from "react-icons/bs";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { FaRegCircleUser } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 
 
-const TopNav = () => {
+const TopNav = ({setCurrentModal}) => {
 
   const navigate = useNavigate()
   const [profileNav, setProfileNav] = useState(false)
+  
 
   return (
     <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.8rem] fixed w-full z-[99]'>
@@ -30,22 +32,28 @@ const TopNav = () => {
       {
         localStorage.getItem('casino-email') ?
         <div className='flex items-center gap-10'>
-          <div className='flex items-center gap-2 text-color hover:text-white cursor-pointer text-[18px] font-[600] bg-primary-color pl-1 pr-3 py-1 rounded-[50px]'>
-            <GiCash className='p-2 bg-profile-nav-bg text-[35px] rounded-full' />
-            <p>$5,000</p>
+          <div className='flex items-center gap-8'>
+            <div className='flex items-center gap-2 text-color hover:text-white cursor-pointer text-[18px] font-[600] bg-primary-color pl-1 pr-3 py-1 rounded-[50px]'>
+              <GiCash className='p-2 bg-profile-nav-bg text-[35px] rounded-full' />
+              <p>$5,000</p>
+            </div>
+            <div className='flex items-center gap-1 text-color bg-primary-color py-2 px-3 cursor-pointer rounded-full'>
+              <FaPlus />
+              <p>Top-up</p>
+            </div>
           </div>
           <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>
         </div>
         :
         <div className='flex items-center gap-[1rem]'>
-          <p className='text-color cursor-pointer' onClick={() => navigate('/login') }>SIGN IN</p>
-          <p className='py-[10px] px-7 ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => navigate('/register') }>SIGN UP</p>
+          <p className='text-color cursor-pointer' onClick={() => setCurrentModal('login')}>SIGN IN</p>
+          <p className='py-[10px] px-7 ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => setCurrentModal('register')}>SIGN UP</p>
         </div>
       }
       {
         profileNav &&
         <div className='absolute bg-profile-nav-bg right-[10px] w-[200px] top-[75px] text-color py-2 rounded-[5px]'>
-          <div className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => setCurrentModal('wallet')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <IoWalletOutline className='text-[18px]'/>
             <p>Wallet</p>
           </div>
@@ -53,11 +61,11 @@ const TopNav = () => {
             <BiMoneyWithdraw className='text-[18px]'/>
             <p>Withdraw</p>
           </div>
-          <div className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => setCurrentModal('profile')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <FaRegCircleUser className='text-[18px]'/>
             <p>Profile</p>
           </div>
-          <div className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div  onClick={() => setCurrentModal('transaction')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <MdHistoryEdu className='text-[18px]'/>
             <p>Transaction</p>
           </div>

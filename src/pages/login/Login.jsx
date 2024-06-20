@@ -3,7 +3,7 @@ import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
 import Alert from '../../components/alert/Alert'
 
-const Login = () => {
+const Login = ({setCurrentModal}) => {
 
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
@@ -26,13 +26,13 @@ const Login = () => {
 
   return (
     <div>
-      <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => navigate('/')}></div>
-      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-8 max-w-md mx-auto w-full z-[101] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
+      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-8 max-w-md mx-auto w-full z-[101] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="./images/vite.svg" className='mx-auto mb-5' alt="" />
         <div className=''>
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-semibold">Sign In</h2>
-            <button className="text-gray-400 hover:text-white text-[30px] absolute top-2 right-6" onClick={() => navigate('/')}>&times;</button>
+            <button className="text-gray-400 hover:text-white text-[30px] absolute top-2 right-6" onClick={() => setCurrentModal('')}>&times;</button>
           </div>
           <div>
             <label className='text-color text-[14px]'>Email</label>
@@ -71,7 +71,7 @@ const Login = () => {
           </div>
           <div className="text-center">
             <span className="text-gray-400">Don't have an account? </span>
-            <Link to="/register" className="text-blue-500 hover:underline">Sign Up</Link>
+            <Link  onClick={() => setCurrentModal('register')}  className="text-blue-500 hover:underline">Sign Up</Link>
           </div>
         </div>
       </div>

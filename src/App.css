@@ -2,7 +2,7 @@
   font-family: "Nunito";
 }
 
-.top-bg{
+.top-bg, .modal-header{
   background: linear-gradient(to right, #1B2746, #1D2129);
 }
 

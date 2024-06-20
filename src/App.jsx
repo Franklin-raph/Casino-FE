@@ -6,12 +6,18 @@ import Home from './pages/home/Home'
 import TopNav from './components/top-nav/TopNav'
 import SideNav from './components/side-nav/SideNav'
 import Footer from './components/footer/Footer'
+import { useState } from 'react'
+import Profile from './components/profile/Profile'
+import Wallet from './components/wallet/Wallet'
+import Transaction from './components/transaction/Transaction'
 
 function App() {
 
+  const [currentModal, setCurrentModal] = useState('')
+
   return (
     <HashRouter>
-      <TopNav />
+      <TopNav setCurrentModal={setCurrentModal}/>
       <div className='flex items-start'>
         <SideNav />
         <div className='pt-[5rem] bg-primary-color w-[82%] ml-auto'>
@@ -23,6 +29,26 @@ function App() {
           <Footer />
         </div>
       </div>
+      {
+        currentModal === 'login' &&
+        <Login setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal ==='register' &&
+        <Register setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'profile' &&
+        <Profile setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'wallet' &&
+        <Wallet setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'transaction' &&
+        <Transaction setCurrentModal={setCurrentModal} />
+      }
     </HashRouter>
   )
 }
