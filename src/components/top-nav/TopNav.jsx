@@ -71,7 +71,7 @@ const TopNav = () => {
           </div>
           <div onClick={() => {
             localStorage.clear()
-            navigate('/')
+            window.location.assign('/')
           }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer border-t border-gray-800'>
             <IoWalletOutline className='text-[18px]'/>
             <p>Sign Out</p>

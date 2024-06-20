@@ -20,7 +20,7 @@ const Login = () => {
       return
     }else{
       localStorage.setItem('casino-email', email)
-      navigate('/')
+      window.location.assign('/')
     }
   }
 

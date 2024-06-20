@@ -2,7 +2,7 @@ import React from 'react'
 import { RiFootballLine } from "react-icons/ri";
 import { MdLiveTv } from "react-icons/md";
 import { TbTargetArrow } from "react-icons/tb";
-import { HiOutlineShare } from "react-icons/hi";
+import { HiOutlineShare, HiOutlineUser } from "react-icons/hi";
 
 
 
@@ -29,6 +29,14 @@ const SideNav = () => {
         <HiOutlineShare className='text-[20px]' />
         <p>Affiliate</p>
       </button>
+
+      {
+        localStorage.getItem('casino-email') &&
+        <div className='absolute left-0 bottom-0 flex items-center gap-[15px] text-color pl-[1.5em] bg-profile-nav-bg py-2 rounded-[4px] w-full'>
+          <HiOutlineUser />
+          <p>{ localStorage.getItem('casino-email') }</p>
+        </div>
+      }
     </div>
   )
 }
