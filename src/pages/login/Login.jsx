@@ -1,19 +1,33 @@
 import React, { useState } from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
+import Alert from '../../components/alert/Alert'
 
 const Login = () => {
 
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [msg, setMsg] = useState()
+  const [alertType, setAlertType] = useState()
 
   const [passwordType, setPasswordType] = useState('password')
+
+  async function handleLogin(){
+    if(!email || !password){
+      setMsg('Please fill all the fields')
+      setAlertType('error')
+      return
+    }else{
+      localStorage.setItem('casino-email', email)
+      navigate('/')
+    }
+  }
 
   return (
     <div>
       <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => navigate('/')}></div>
-      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-8 max-w-md mx-auto w-full z-[101] relative">
+      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-8 max-w-md mx-auto w-full z-[101] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="./images/vite.svg" className='mx-auto mb-5' alt="" />
         <div className=''>
           <div className="flex justify-between items-center mb-8">
@@ -25,8 +39,9 @@ const Login = () => {
             <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded mb-4'>
               <input
                 type="text" 
-                placeholder="Account / Email / Phone Number" 
+                placeholder="Email / Phone Number" 
                 className="w-full text-white bg-transparent outline-none"
+                onChange={e => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -38,6 +53,7 @@ const Login = () => {
                 type={passwordType} 
                 placeholder="Password" 
                 className="w-full text-white bg-transparent outline-none"
+                onChange={e => setPassword(e.target.value)}
               />
               {
                 passwordType === "password" ?
@@ -47,7 +63,7 @@ const Login = () => {
               }
             </div>
           </div>
-          <button className="w-full bg-blue-500 text-white py-2 rounded my-4">
+          <button className="w-full bg-blue-500 text-white py-2 rounded my-4" onClick={handleLogin}>
             Sign In
           </button>
           <div className="text-center mb-4">
@@ -59,6 +75,9 @@ const Login = () => {
           </div>
         </div>
       </div>
+      {
+        msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+      }
     </div>
   )
 }
