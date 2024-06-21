@@ -10,6 +10,8 @@ import { useState } from 'react'
 import Profile from './components/profile/Profile'
 import Wallet from './components/wallet/Wallet'
 import Transaction from './components/transaction/Transaction'
+import BetHistory from './components/bet-history/BetHistory'
+import Settings from './components/settings/Settings'
 
 function App() {
 
@@ -48,6 +50,14 @@ function App() {
       {
         currentModal === 'transaction' &&
         <Transaction setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'betHistory' &&
+        <BetHistory setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal ==='settings' &&
+        <Settings setCurrentModal={setCurrentModal} />
       }
     </HashRouter>
   )

@@ -65,15 +65,15 @@ const TopNav = ({setCurrentModal}) => {
             <FaRegCircleUser className='text-[18px]'/>
             <p>Profile</p>
           </div>
-          <div  onClick={() => setCurrentModal('transaction')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => setCurrentModal('transaction')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <MdHistoryEdu className='text-[18px]'/>
             <p>Transaction</p>
           </div>
-          <div className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => setCurrentModal('betHistory')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <BsClockHistory className='text-[18px]'/>
             <p>Bet History</p>
           </div>
-          <div className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => setCurrentModal('settings')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <HiOutlineCog6Tooth className='text-[18px]'/>
             <p>Settings</p>
           </div>
