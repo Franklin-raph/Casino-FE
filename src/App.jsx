@@ -1,8 +1,8 @@
 import './App.css'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import Register from './pages/register/Register'
-import Login from './pages/login/Login'
 import Home from './pages/home/Home'
+import Register from './components/register/Register'
+import Login from './components/login/Login'
 import TopNav from './components/top-nav/TopNav'
 import SideNav from './components/side-nav/SideNav'
 import Footer from './components/footer/Footer'
@@ -12,10 +12,16 @@ import Wallet from './components/wallet/Wallet'
 import Transaction from './components/transaction/Transaction'
 import BetHistory from './components/bet-history/BetHistory'
 import Settings from './components/settings/Settings'
+import Deposit from './components/deposit/Deposit'
+import Casual from './pages/casual/Casual'
+import Shows from './pages/shows/Shows'
+import Live from './pages/live/Live'
+import BonusGames from './pages/bonus-games/BonusGames'
 
 function App() {
 
   const [currentModal, setCurrentModal] = useState('')
+  const baseUrl = "www.google.com"
 
   return (
     <HashRouter>
@@ -25,8 +31,10 @@ function App() {
         <div className='pt-[5rem] bg-primary-color w-[82%] ml-auto'>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/casual" element={<Casual baseUrl={baseUrl} />} />
+            <Route path="/shows" element={<Shows baseUrl={baseUrl} />} />
+            <Route path='/live' element={<Live />} />
+            <Route path="/bonus-games" element={<BonusGames baseUrl={baseUrl} />} />
           </Routes>
           <Footer />
         </div>
@@ -58,6 +66,10 @@ function App() {
       {
         currentModal ==='settings' &&
         <Settings setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'deposit' &&
+        <Deposit setCurrentModal={setCurrentModal} />
       }
     </HashRouter>
   )

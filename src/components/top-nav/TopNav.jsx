@@ -37,9 +37,9 @@ const TopNav = ({setCurrentModal}) => {
               <GiCash className='p-2 bg-profile-nav-bg text-[35px] rounded-full' />
               <p>$5,000</p>
             </div>
-            <div className='flex items-center gap-1 text-color bg-primary-color py-2 px-3 cursor-pointer rounded-full'>
+            <div onClick={() => setCurrentModal('deposit')} className='flex items-center gap-1 text-color bg-primary-color py-2 px-3 cursor-pointer rounded-full'>
               <FaPlus />
-              <p>Top-up</p>
+              <p>Deposit</p>
             </div>
           </div>
           <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>

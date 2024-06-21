@@ -145,41 +145,86 @@ const Home = () => {
         </div>
 
         <div >
-          <Slider {...gamesCarouselSettings}>
-            <div className='rounded-[6px]'>
-              <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
+        <Slider {...gamesCarouselSettings}>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games3.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game7.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games6.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/games6.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game01.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/game01.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
             </div>
-          </Slider>
+            <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+            </div>
+            <img src="./images/game7.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+          <div className='rounded-[6px] relative card-parent cursor-pointer'>
+            <div className='hover-bg flex items-center justify-center'>
+              <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+            </div>
+            <img src="./images/game8.avif" className='rounded-[6px] h-full object-contain' alt="" />
+          </div>
+        </Slider>
         </div>
       </div>
 
@@ -194,38 +239,84 @@ const Home = () => {
 
         <div >
           <Slider {...gamesCarouselSettings}>
-            <div className='rounded-[6px]'>
-              <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
+            
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/games6.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/game01.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games3.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/game7.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game8.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
           </Slider>
         </div>
@@ -242,38 +333,83 @@ const Home = () => {
 
         <div >
           <Slider {...gamesCarouselSettings}>
-            <div className='rounded-[6px]'>
-              <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games6.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game01.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game7.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games3.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games6.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game01.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game7.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game8.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
           </Slider>
         </div>
@@ -295,35 +431,77 @@ const Home = () => {
               </div>
               <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/games1.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games2.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games3.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games4.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/games5.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/games6.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
-              <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
-            </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/game01.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game02.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game0.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game03.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/game7.avif" className='rounded-[6px] h-full object-contain' alt="" />
+            </div>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
+              <img src="./images/game8.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
           </Slider>
         </div>

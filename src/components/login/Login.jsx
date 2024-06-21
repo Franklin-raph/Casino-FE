@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
-import Alert from '../../components/alert/Alert'
+import Alert from '../alert/Alert'
 
 const Login = ({setCurrentModal}) => {
 

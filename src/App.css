@@ -142,3 +142,7 @@
   transition: 0.5s;
   bottom: 0;
 }
+
+.card-parent{
+  overflow: hidden;
+}
