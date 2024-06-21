@@ -127,3 +127,18 @@
   }
 
 }
+
+.hover-bg{
+  background: #1b2746eb;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: -400px;
+  transition: 0.5s;
+  border-radius: 6px;
+}
+
+.card-parent:hover .hover-bg{
+  transition: 0.5s;
+  bottom: 0;
+}

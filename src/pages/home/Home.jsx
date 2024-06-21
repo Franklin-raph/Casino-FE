@@ -289,7 +289,10 @@ const Home = () => {
 
         <div >
           <Slider {...gamesCarouselSettings}>
-            <div className='rounded-[6px]'>
+            <div className='rounded-[6px] relative card-parent cursor-pointer'>
+              <div className='hover-bg flex items-center justify-center'>
+                <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>
+              </div>
               <img src="./images/games.avif" className='rounded-[6px] h-full object-contain' alt="" />
             </div>
             <div className='rounded-[6px]'>
