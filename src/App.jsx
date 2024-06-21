@@ -30,11 +30,11 @@ function App() {
         <SideNav />
         <div className='pt-[5rem] bg-primary-color w-[82%] ml-auto'>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/casual" element={<Casual baseUrl={baseUrl} />} />
-            <Route path="/shows" element={<Shows baseUrl={baseUrl} />} />
-            <Route path='/live' element={<Live />} />
-            <Route path="/bonus-games" element={<BonusGames baseUrl={baseUrl} />} />
+            <Route path="/" element={<Home setCurrentModal={setCurrentModal}/>} />
+            <Route path="/casual" element={<Casual baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
+            <Route path="/shows" element={<Shows baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
+            <Route path='/live' element={<Live baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
+            <Route path="/bonus-games" element={<BonusGames baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
           </Routes>
           <Footer />
         </div>
