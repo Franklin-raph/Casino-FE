@@ -13,7 +13,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 
 
-const TopNav = ({setCurrentModal}) => {
+const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
 
   const navigate = useNavigate()
   const [profileNav, setProfileNav] = useState(false)
@@ -21,7 +21,7 @@ const TopNav = ({setCurrentModal}) => {
 
   return (
     <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.8rem] fixed w-full z-[99]'>
-      <div className='flex items-center gap-[3rem]'>
+      <div className='flex items-center gap-[3rem]' onClick={() => setDesktopSideNav(!desktopSidenav)}>
         <MdMenuOpen className='text-color text-[30px] cursor-pointer'/>
         <Link to="/"> <img src="./images/vite.svg" alt="" /> </Link>
         <div className='flex items-center text-white text-[18px] gap-2 py-2 px-4 rounded-[5px] gradient-btn'>

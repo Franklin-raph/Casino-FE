@@ -21,14 +21,15 @@ import BonusGames from './pages/bonus-games/BonusGames'
 function App() {
 
   const [currentModal, setCurrentModal] = useState('')
+  const [desktopSidenav, setDesktopSideNav] = useState(true)
   const baseUrl = "www.google.com"
 
   return (
     <HashRouter>
-      <TopNav setCurrentModal={setCurrentModal}/>
+      <TopNav setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} desktopSidenav={desktopSidenav}/>
       <div className='flex items-start'>
-        <SideNav />
-        <div className='pt-[5rem] bg-primary-color w-[82%] ml-auto'>
+        <SideNav desktopSidenav={desktopSidenav} />
+        <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto'} >
           <Routes>
             <Route path="/" element={<Home setCurrentModal={setCurrentModal}/>} />
             <Route path="/casual" element={<Casual baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
