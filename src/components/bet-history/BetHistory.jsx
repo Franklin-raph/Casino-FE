@@ -62,7 +62,12 @@ const BetHistory = ({setCurrentModal}) => {
                     </div>
                 </div>
                 <div className='my-3 h-[400px] bg-[#191B21] rounded-[6px] p-4'>
-                    
+                    <div className='my-3 h-[400px] bg-[#191B21] rounded-[6px] p-4 flex items-center'>
+                        <div className='flex items-center justify-center flex-col'>
+                            <img src="./images/empty.avif" className='w-[40%]' alt="" />
+                            <p className='text-color'>Oops! No data yet!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,8 @@
 import React from 'react'
+import { FaRegCircleUser } from 'react-icons/fa6';
 import { IoCopyOutline } from "react-icons/io5";
+import { CiUser } from "react-icons/ci";
+import { HiPencil } from "react-icons/hi2";
 
 
 const Profile = ({setCurrentModal}) => {
@@ -12,12 +15,25 @@ const Profile = ({setCurrentModal}) => {
                 <p className='cursor-pointer' onClick={() => setCurrentModal('')}>&times;</p>
             </div>
             <div className='p-6'>
-                <div className='flex gap-4 flex-col text-lg'>
-                    <p>Email: <span className='font-[700]'>{localStorage.getItem('casino-email')}</span> </p>
-                    <p>Phone Number: <span className='font-[700]'>081-123-123-12</span> </p>
-                    <div className='flex items-center gap-4'>
-                        <p>Referal Code: <span className='font-[700]'>123456</span> </p>
-                        <IoCopyOutline  className='text-color cursor-pointer'/>
+                <div className='flex items-start justify-between'>
+                    <div></div>
+                    <div className='flex pl-[30px] items-center justify-center flex-col'>
+                        {
+                            localStorage.getItem('casino-img') ?
+                            <div className='rounded-full border-[3px] border-color w-[100px] mb-2 mx-auto'>
+                                <img src={localStorage.getItem('casino-img')} className='w-full mx-auto rounded-full' alt="" />
+                            </div>
+                            :
+                            <CiUser className='text-[60px]'/>
+                        }
+                        <p className='font-bold text-[20px]'>Franklin Raphael</p>
+                        <div className='flex items-center gap-4 text-color'>
+                            <p>ID: <span className='font-[700]'>123456</span> </p>
+                            <IoCopyOutline  className='text-color cursor-pointer'/>
+                        </div>
+                    </div>
+                    <div className='p-[6px] text-color cursor-pointer bg-side-nav-bg rounded-[3px]'>
+                        <HiPencil className='text-[20px]' onClick={() => setCurrentModal('profilePic')}/>
                     </div>
                 </div>
                 <div className='grid grid-cols-3 mt-5 gap-3'>

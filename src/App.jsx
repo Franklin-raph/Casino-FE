@@ -17,6 +17,7 @@ import Casual from './pages/casual/Casual'
 import Shows from './pages/shows/Shows'
 import Live from './pages/live/Live'
 import BonusGames from './pages/bonus-games/BonusGames'
+import ProfilePic from './components/profile-pic/ProfilePic'
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
     <HashRouter>
       <TopNav setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} desktopSidenav={desktopSidenav}/>
       <div className='flex items-start'>
-        <SideNav desktopSidenav={desktopSidenav} />
+        <SideNav desktopSidenav={desktopSidenav} setCurrentModal={setCurrentModal}/>
         <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto'} >
           <Routes>
             <Route path="/" element={<Home setCurrentModal={setCurrentModal}/>} />
@@ -71,6 +72,10 @@ function App() {
       {
         currentModal === 'deposit' &&
         <Deposit setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'profilePic' &&
+        <ProfilePic setCurrentModal={setCurrentModal} />
       }
     </HashRouter>
   )

@@ -59,7 +59,7 @@ const Footer = () => {
     <div>
       <div className='bg-profile-nav-bg flex items-start justify-between md:flex-row flex-col gap-[2rem] md:gap-[5rem] mt-[2rem] py-[3rem] lg:px-12 px-8'>
         <div className='w-full'>
-          <Link to="/" className='mb-5 inline- block'>
+          <Link to="/" className='mb-5 inline-block'>
             <img src="./images/vite.svg" alt=""className='w-[50px]' />
           </Link>
           <p className='text-[14px] md:text-[16px] text-gray-400'>

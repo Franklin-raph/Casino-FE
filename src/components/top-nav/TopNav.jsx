@@ -42,7 +42,15 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
               <p>Deposit</p>
             </div>
           </div>
-          <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>
+          {
+                localStorage.getItem('casino-img') ?
+                <div className='rounded-full w-[35px] mb-2 mx-auto cursor-pointer' onClick={() => setProfileNav(!profileNav)}>
+                    <img src={localStorage.getItem('casino-img')} className='w-full mx-auto rounded-full' alt="" />
+                </div>
+                :
+                <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>
+            }
+          
         </div>
         :
         <div className='flex items-center gap-[1rem]'>

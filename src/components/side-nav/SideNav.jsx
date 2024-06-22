@@ -6,7 +6,7 @@ import { HiOutlineShare, HiOutlineUser } from "react-icons/hi";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 
-const SideNav = ({desktopSidenav}) => {
+const SideNav = ({desktopSidenav, setCurrentModal}) => {
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -35,7 +35,7 @@ const SideNav = ({desktopSidenav}) => {
 
             {
               localStorage.getItem('casino-email') &&
-              <div className='absolute left-0 bottom-0 flex items-center gap-[15px] text-color pl-[1.5em] bg-profile-nav-bg py-2 rounded-[4px] w-full hover:text-white hover:border-color border border-transparent'>
+              <div onClick={() => setCurrentModal('profile')} className='cursor-pointer absolute left-0 bottom-0 flex items-center gap-[15px] text-color pl-[1.5em] bg-profile-nav-bg py-2 rounded-[4px] w-full hover:text-white hover:border-color border border-transparent'>
                 <HiOutlineUser />
                 <p>{ localStorage.getItem('casino-email') }</p>
               </div>
@@ -65,7 +65,7 @@ const SideNav = ({desktopSidenav}) => {
 
             {
               localStorage.getItem('casino-email') &&
-              <div className='absolute left-0 bottom-0 flex items-center gap-[15px] text-color pl-[1.5em] bg-profile-nav-bg py-2 rounded-[4px] w-full hover:text-white hover:border-color border border-transparent'>
+              <div onClick={() => setCurrentModal('profile')} className='absolute cursor-pointer left-0 bottom-0 flex items-center gap-[15px] text-color justify-center bg-profile-nav-bg py-2 rounded-[4px] w-full hover:text-white hover:border-color border border-transparent'>
                 <HiOutlineUser />
                 {/* <p>{ localStorage.getItem('casino-email') }</p> */}
               </div>
