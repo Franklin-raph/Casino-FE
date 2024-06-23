@@ -1,4 +1,6 @@
 import React from 'react'
+import { TbCurrencyNaira } from "react-icons/tb";
+
 
 const Wallet = ({setCurrentModal}) => {
   return (
@@ -12,12 +14,18 @@ const Wallet = ({setCurrentModal}) => {
             <div className='p-6'>
                 <div className='mb-5 border border-dashed border-color rounded-[6px] p-4'>
                     <p className='text-[20px]'>Cash</p>
-                    <p className='font-[700] text-[22px] text-center mt-2 text-green-500'>$1,000</p>
+                    <div className='font-[700] text-[22px] flex items-center justify-center text-center mt-2 text-green-500'>
+                        <TbCurrencyNaira />
+                        <p>1,000</p>
+                    </div>
                     <p className='text-center bg-primary-color rounded-full py-1 mt-2 cursor-pointer'>Deposit Now</p>
                 </div>
                 <div className='border border-dashed border-color rounded-[6px] p-4'>
                     <p className='text-[20px]'>Bonus</p>
-                    <p className='font-[700] text-[22px] text-center mt-2 text-green-500'>$1,000</p>
+                    <div className='font-[700] text-[22px] flex items-center justify-center text-center mt-2 text-green-500'>
+                        <TbCurrencyNaira />
+                        <p>1,000</p>
+                    </div>
                     <p className='text-center bg-primary-color rounded-full py-1 mt-2 cursor-pointer'>Get Bonus</p>
                 </div>
             </div>

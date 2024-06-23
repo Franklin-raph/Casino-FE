@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { IoChevronDown } from 'react-icons/io5'
 import { FiLoader } from "react-icons/fi";
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 const Withdraw = ({setCurrentModal}) => {
 
@@ -103,11 +104,14 @@ const Withdraw = ({setCurrentModal}) => {
                 <div className='w-full'>
                   <label className='text-color text-[14px] pb-1 block'>Amount</label>
                   <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded mb-4'>
-                    <input
-                      type="text" 
-                      placeholder="$ 90,000" 
-                      className="w-full text-white bg-transparent outline-none"
-                    />
+                    <div className='flex items-center'>
+                        <TbCurrencyNaira className='text-[22px] mr-[2px]'/>
+                        <input
+                        type="text" 
+                        placeholder="90,000" 
+                        className="w-full text-white bg-transparent outline-none"
+                        />
+                    </div>
                   </div>
                   <button className="w-full bg-blue-500 text-white py-2 rounded">Place Withdrawal Request</button>
                 </div>
