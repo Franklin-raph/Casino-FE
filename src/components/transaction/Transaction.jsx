@@ -6,14 +6,34 @@ const Transaction = ({setCurrentModal}) => {
 
     const [dropDown, setDropDown] = useState(false)
 
-    const dateArray = ["Today", "Yesterday", "Last 3 days", "Last 7 days", "Last 15 days", "Last 30 days"]
-    const [selectedDate, setSelectedDate] = useState(dateArray[0])
+    const txnHistoryArray = [
+        {
+            id:'1',
+            date:["Today", "Last 7 days", "Last 60 days"]
+        },
+        {
+            id:'2',
+            txnType:["Withdraw", "Deposit"]
+        },
+        {
+            id:'3',
+            status:["All", "Pending", "Successful", "Failed"]
+        },
 
-    const withdrawArray = ["Withdraw", "Deposit"]
-    const [selectedWithdrawal, setSelectedSelectedWithdrawal] = useState(withdrawArray[0])
+    ]
+  
+    const [selectedDate, setSelectedDate] = useState(txnHistoryArray[0].date[0])
 
-    const statusArray = ["All", "Pending", "Successful", "Failed"]
-    const [selectedStatus, setSelectedSelectedStatus] = useState(statusArray[0])
+    const [selectedTxnType, setSelectedSelectedTxnType] = useState(txnHistoryArray[1].txnType[0])
+
+    // const dateArray = ["Today", "Yesterday", "Last 3 days", "Last 7 days", "Last 15 days", "Last 30 days"]
+    // const [selectedDate, setSelectedDate] = useState(dateArray[0])
+
+    // const withdrawArray = ["Withdraw", "Deposit"]
+    // const [selectedWithdrawal, setSelectedSelectedWithdrawal] = useState(withdrawArray[0])
+
+    // const statusArray = ["All", "Pending", "Successful", "Failed"]
+    const [selectedStatus, setSelectedSelectedStatus] = useState(txnHistoryArray[2].status[0])
 
   return (
     <div>
@@ -32,7 +52,7 @@ const Transaction = ({setCurrentModal}) => {
                             dropDown === 'date' &&
                             <div className='absolute bg-[#2A2F39] top-[45px] rounded-[6px] w-full left-0'>
                                 {
-                                    dateArray.map((item, index) => {
+                                    txnHistoryArray[0].date.map((item, index) => {
                                         return (
                                             <p key={index} onClick={() => {
                                                 setDropDown(false)
@@ -45,17 +65,17 @@ const Transaction = ({setCurrentModal}) => {
                         }
                     </div>
                     <div className='cursor-pointer relative flex items-center justify-between w-full bg-[#2A2F39] p-2 rounded-[6px]' onClick={() => setDropDown( dropDown === 'withdraw' ? false : 'withdraw' )}>
-                        <p className='text-[14px]'>{selectedWithdrawal}</p>
+                        <p className='text-[14px]'>{selectedTxnType}</p>
                         <IoChevronDown />
                         {
                             dropDown === 'withdraw' &&
                             <div className='absolute bg-[#2A2F39] top-[45px] rounded-[6px] w-full left-0'>
                                 {
-                                    withdrawArray.map((item, index) => {
+                                    txnHistoryArray[1].txnType.map((item, index) => {
                                         return (
                                             <p key={index} onClick={() => {
                                                 setDropDown(false)
-                                                setSelectedSelectedWithdrawal(item)
+                                                setSelectedSelectedTxnType(item)
                                             }} className='text-[14px] cursor-pointer px-4 py-2 hover:bg-[#23262F]'>{item}</p>
                                         )
                                     })
@@ -70,7 +90,7 @@ const Transaction = ({setCurrentModal}) => {
                             dropDown === 'status' &&
                             <div className='absolute bg-[#2A2F39] top-[45px] rounded-[6px] w-full left-0'>
                                 {
-                                    statusArray.map((item, index) => {
+                                    txnHistoryArray[2].status.map((item, index) => {
                                         return (
                                             <p key={index} onClick={() => {
                                                 setDropDown(false)
