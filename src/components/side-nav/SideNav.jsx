@@ -4,6 +4,8 @@ import { MdLiveTv } from "react-icons/md";
 import { TbTargetArrow } from "react-icons/tb";
 import { HiOutlineShare, HiOutlineUser } from "react-icons/hi";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { TbSmartHome } from "react-icons/tb";
+
 
 
 const SideNav = ({desktopSidenav, setCurrentModal}) => {
@@ -16,6 +18,10 @@ const SideNav = ({desktopSidenav, setCurrentModal}) => {
       {
         desktopSidenav &&
           <div className='bg-side-nav-bg text-white pt-[5rem] flex flex-col justify-start items-start w-[18%] gap-2 h-full px-2 fixed'>
+            <button onClick={() => navigate('/')} className={ location.pathname === '/' ? 'flex items-center gap-[15px] py-3 pl-[1.5rem] rounded-[4px] w-full bg-side-nav-bg text-white border-color border' : 'flex items-center gap-[15px] text-color bg-profile-nav-bg py-3 pl-[1.5rem] rounded-[4px] w-full hover:bg-side-nav-bg hover:text-white hover:border-color border border-transparent' }>
+              <TbSmartHome className='text-[20px]' />
+              <p>Home</p>
+            </button>
             <button onClick={() => navigate('/bonus-games')} className={ location.pathname.includes('bonus') ? 'flex items-center gap-[15px] py-3 pl-[1.5rem] rounded-[4px] w-full bg-side-nav-bg text-white border-color border' : 'flex items-center gap-[15px] text-color bg-profile-nav-bg py-3 pl-[1.5rem] rounded-[4px] w-full hover:bg-side-nav-bg hover:text-white hover:border-color border border-transparent' }>
               <RiFootballLine className='text-[20px]' />
               <p>Bonus Games</p>

@@ -18,6 +18,7 @@ import Shows from './pages/shows/Shows'
 import Live from './pages/live/Live'
 import BonusGames from './pages/bonus-games/BonusGames'
 import ProfilePic from './components/profile-pic/ProfilePic'
+import Withdraw from './components/withdraw/Withdraw'
 
 function App() {
 
@@ -76,6 +77,10 @@ function App() {
       {
         currentModal === 'profilePic' &&
         <ProfilePic setCurrentModal={setCurrentModal} />
+      }
+      {
+        currentModal === 'withdraw' &&
+        <Withdraw setCurrentModal={setCurrentModal} />
       }
     </HashRouter>
   )

@@ -65,7 +65,7 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
             <IoWalletOutline className='text-[18px]'/>
             <p>Wallet</p>
           </div>
-          <div className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => setCurrentModal('withdraw')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <BiMoneyWithdraw className='text-[18px]'/>
             <p>Withdraw</p>
           </div>
