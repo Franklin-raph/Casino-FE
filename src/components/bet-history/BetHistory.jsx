@@ -4,12 +4,22 @@ import { IoChevronDown } from "react-icons/io5";
 const BetHistory = ({setCurrentModal}) => {
 
     const [dropDown, setDropDown] = useState(false)
-  
-    const dateArray = ["Today", "Last 7 days", "Last 60 days"]
-    const [selectedDate, setSelectedDate] = useState(dateArray[0])
 
-    const gamesArray = ["All games", "Original", "Slots", "Live", "Casual", "Shows", "Sport"]
-    const [selectedGame, setSelectedSelectedGame] = useState(gamesArray[0])
+    const betHistoryArray = [
+        {
+            id:'1',
+            date:["Today", "Last 7 days", "Last 60 days"]
+        },
+        {
+            id:'2',
+            games:["All games", "Original", "Slots", "Live", "Casual", "Shows", "Sport"]
+        },
+
+    ]
+  
+    const [selectedDate, setSelectedDate] = useState(betHistoryArray[0].date[0])
+
+    const [selectedGame, setSelectedSelectedGame] = useState(betHistoryArray[1].games[0])
 
   return (
     <div>
@@ -28,7 +38,7 @@ const BetHistory = ({setCurrentModal}) => {
                             dropDown === 'date' &&
                             <div className='absolute bg-[#2A2F39] top-[45px] rounded-[6px] w-full left-0'>
                                 {
-                                    dateArray.map((item, index) => {
+                                    betHistoryArray[0].date.map((item, index) => {
                                         return (
                                             <p key={index} onClick={() => {
                                                 setDropDown(false)
@@ -47,7 +57,7 @@ const BetHistory = ({setCurrentModal}) => {
                             dropDown === 'games' &&
                             <div className='absolute bg-[#2A2F39] top-[45px] rounded-[6px] w-full left-0'>
                                 {
-                                    gamesArray.map((item, index) => {
+                                    betHistoryArray[1].games.map((item, index) => {
                                         return (
                                             <p key={index} onClick={() => {
                                                 setDropDown(false)
