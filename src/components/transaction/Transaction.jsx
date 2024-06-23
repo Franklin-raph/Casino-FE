@@ -23,16 +23,7 @@ const Transaction = ({setCurrentModal}) => {
     ]
   
     const [selectedDate, setSelectedDate] = useState(txnHistoryArray[0].date[0])
-
     const [selectedTxnType, setSelectedSelectedTxnType] = useState(txnHistoryArray[1].txnType[0])
-
-    // const dateArray = ["Today", "Yesterday", "Last 3 days", "Last 7 days", "Last 15 days", "Last 30 days"]
-    // const [selectedDate, setSelectedDate] = useState(dateArray[0])
-
-    // const withdrawArray = ["Withdraw", "Deposit"]
-    // const [selectedWithdrawal, setSelectedSelectedWithdrawal] = useState(withdrawArray[0])
-
-    // const statusArray = ["All", "Pending", "Successful", "Failed"]
     const [selectedStatus, setSelectedSelectedStatus] = useState(txnHistoryArray[2].status[0])
 
   return (
