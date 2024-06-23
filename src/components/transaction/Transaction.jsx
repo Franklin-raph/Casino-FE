@@ -6,15 +6,12 @@ const Transaction = ({setCurrentModal}) => {
 
     const [dropDown, setDropDown] = useState(false)
 
-    const [dateDropDown, setDateDropDown] = useState(false)
     const dateArray = ["Today", "Yesterday", "Last 3 days", "Last 7 days", "Last 15 days", "Last 30 days"]
     const [selectedDate, setSelectedDate] = useState(dateArray[0])
 
-    const [withdrawDropDown, setWithdrawDropDown] = useState(false)
     const withdrawArray = ["Withdraw", "Deposit"]
     const [selectedWithdrawal, setSelectedSelectedWithdrawal] = useState(withdrawArray[0])
 
-    const [statusDropDown, setStatusDropDown] = useState(false)
     const statusArray = ["All", "Pending", "Successful", "Failed"]
     const [selectedStatus, setSelectedSelectedStatus] = useState(statusArray[0])
 
