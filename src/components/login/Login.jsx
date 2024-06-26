@@ -2,25 +2,47 @@ import React, { useState } from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
 import Alert from '../alert/Alert'
+import BtnLoader from '../btn-loader/BtnLoader'
 
-const Login = ({setCurrentModal}) => {
+const Login = ({setCurrentModal, baseUrl}) => {
 
   const navigate = useNavigate()
-  const [email, setEmail] = useState('')
+  const [value, setValue] = useState('')
   const [password, setPassword] = useState('')
   const [msg, setMsg] = useState()
   const [alertType, setAlertType] = useState()
+  const [loading, setLoading] = useState(false)
 
   const [passwordType, setPasswordType] = useState('password')
 
   async function handleLogin(){
-    if(!email || !password){
+    if(!value || !password){
       setMsg('Please fill all the fields')
       setAlertType('error')
       return
     }else{
-      localStorage.setItem('casino-email', email)
-      window.location.assign('/')
+      setLoading(true)
+      const res = await fetch(`${baseUrl}/auth/login`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: value,
+          password: password
+        })
+      })
+      const data = await res.json()
+      if(res) setLoading(false)
+      console.log(data);
+      if(!res.ok){
+        setAlertType('error')
+        setMsg(data.error_message)
+        return
+      }else{
+        localStorage.setItem('casino-email', email)
+        window.location.assign('/')
+      }
     }
   }
 
@@ -41,7 +63,7 @@ const Login = ({setCurrentModal}) => {
                 type="text" 
                 placeholder="Email / Phone Number" 
                 className="w-full text-white bg-transparent outline-none"
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => setValue(e.target.value)}
               />
             </div>
           </div>
@@ -63,9 +85,15 @@ const Login = ({setCurrentModal}) => {
               }
             </div>
           </div>
-          <button className="w-full bg-blue-500 text-white py-2 rounded my-4" onClick={handleLogin}>
-            Sign In
-          </button>
+          {
+            loading?
+            <BtnLoader />
+            :
+            <button className="w-full bg-blue-500 text-white py-2 rounded my-4" onClick={handleLogin}>
+              Sign In
+            </button>
+          }
+
           <div className="text-center mb-4">
             <Link to="/" className="text-gray-400 hover:text-white">Forgot Password?</Link>
           </div>

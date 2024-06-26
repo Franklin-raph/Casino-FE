@@ -24,7 +24,7 @@ function App() {
 
   const [currentModal, setCurrentModal] = useState('')
   const [desktopSidenav, setDesktopSideNav] = useState(true)
-  const baseUrl = "www.google.com"
+  const baseUrl = "https://heavyheat56.pythonanywhere.com"
 
   return (
     <HashRouter>
@@ -44,43 +44,43 @@ function App() {
       </div>
       {
         currentModal === 'login' &&
-        <Login setCurrentModal={setCurrentModal} />
+        <Login setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal ==='register' &&
-        <Register setCurrentModal={setCurrentModal} />
+        <Register setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'profile' &&
-        <Profile setCurrentModal={setCurrentModal} />
+        <Profile setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'wallet' &&
-        <Wallet setCurrentModal={setCurrentModal} />
+        <Wallet setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'transaction' &&
-        <Transaction setCurrentModal={setCurrentModal} />
+        <Transaction setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'betHistory' &&
-        <BetHistory setCurrentModal={setCurrentModal} />
+        <BetHistory setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal ==='settings' &&
-        <Settings setCurrentModal={setCurrentModal} />
+        <Settings setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'deposit' &&
-        <Deposit setCurrentModal={setCurrentModal} />
+        <Deposit setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'profilePic' &&
-        <ProfilePic setCurrentModal={setCurrentModal} />
+        <ProfilePic setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
       {
         currentModal === 'withdraw' &&
-        <Withdraw setCurrentModal={setCurrentModal} />
+        <Withdraw setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
       }
     </HashRouter>
   )

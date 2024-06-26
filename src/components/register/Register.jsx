@@ -1,14 +1,63 @@
 import React, { useState } from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
+import Alert from '../alert/Alert'
+import BtnLoader from '../btn-loader/BtnLoader'
 
-const Register = ({setCurrentModal}) => {
+const Register = ({setCurrentModal, baseUrl}) => {
 
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [first_name, setFirstName] = useState('')
+  const [last_name, setLastName] = useState('')
+  const [phone_number, setPhoneNumber] = useState('')
+  const [password_confirm, setPasswordConfirm] = useState('')
+
+  const [msg, setMsg] = useState()
+  const [alertType, setAlertType] = useState()
+  const [loading, setLoading] = useState(false)
 
   const [passwordType, setPasswordType] = useState('password')
+
+  async function handleUseSignUp(){
+    setLoading(true)
+    if(!email || !password || !first_name || !last_name || !phone_number || !password_confirm){
+      setMsg('Please fill all the fields')
+      setAlertType('error')
+      return
+    }else{
+      console.log(JSON.stringify({
+        email: email,
+        password:password,
+        first_name: first_name,
+        last_name: last_name,
+        phone_number: phone_number,
+        password_confirm:  password_confirm
+      }));
+      const res = await fetch(`${baseUrl}/auth/signup`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          password:password,
+          first_name: first_name,
+          last_name: last_name,
+          phone_number: phone_number,
+          password_confirm:  password_confirm
+        })
+      })
+      const data = await res.json()
+      if(res) setLoading(false)
+      if(!res.ok){
+        setAlertType('error')
+        setMsg(data.error_message)
+        return
+      }
+    }
+  }
 
   return (
     <div>
@@ -26,6 +75,7 @@ const Register = ({setCurrentModal}) => {
               <label className='text-color text-[14px]'>First Name</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded mb-4'>
                 <input
+                  onChange={e => setFirstName(e.target.value)}
                   type="text" 
                   placeholder="John" 
                   className="w-full text-white bg-transparent outline-none"
@@ -37,6 +87,7 @@ const Register = ({setCurrentModal}) => {
               <label className='text-color text-[14px]'>Last Name</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded mb-4'>
                 <input
+                  onChange={e => setLastName(e.target.value)}
                   type="text" 
                   placeholder="Doe" 
                   className="w-full text-white bg-transparent outline-none"
@@ -50,6 +101,7 @@ const Register = ({setCurrentModal}) => {
               <label className='text-color text-[14px]'>Email</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded'>
                 <input
+                  onChange={e => setEmail(e.target.value)}
                   type="text" 
                   placeholder="johndoe@gmail.com" 
                   className="w-full text-white bg-transparent outline-none"
@@ -61,6 +113,7 @@ const Register = ({setCurrentModal}) => {
               <label className='text-color text-[14px]'>Phone Number</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded'>
                 <input
+                  onChange={e => setPhoneNumber(e.target.value)}
                   type="text" 
                   placeholder="+123-456-789" 
                   className="w-full text-white bg-transparent outline-none"
@@ -73,7 +126,8 @@ const Register = ({setCurrentModal}) => {
             <div className='mt-4 w-full'>
               <label className='text-color text-[14px]'>Password</label>
               <div className='flex items-center py-2 px-4 rounded mb-4 w-full border border-transparent bg-gray-800 hover:border-[#5A78FF]'>
-                <input 
+                <input
+                  onChange={e => setPassword(e.target.value)}
                   type={passwordType} 
                   placeholder="********" 
                   className="w-full text-white bg-transparent outline-none"
@@ -90,7 +144,8 @@ const Register = ({setCurrentModal}) => {
             <div className='mt-4 w-full'>
               <label className='text-color text-[14px]'>Confirm Password</label>
               <div className='flex items-center py-2 px-4 rounded mb-4 w-full border border-transparent bg-gray-800 hover:border-[#5A78FF]'>
-                <input 
+                <input
+                  onChange={e => setPasswordConfirm(e.target.value)}
                   type={passwordType} 
                   placeholder="*********" 
                   className="w-full text-white bg-transparent outline-none"
@@ -110,15 +165,27 @@ const Register = ({setCurrentModal}) => {
             <p className='text-color text-[14px]'>I agree to the user agreement & confirm I am at least 18 years old</p>
           </div>
 
-          <button className="w-full bg-blue-500 text-white py-2 rounded my-4">
+          {
+            loading?
+            <BtnLoader/>
+            :
+            <button onClick={handleUseSignUp} className="w-full bg-blue-500 text-white py-2 rounded my-4">
+              Sign Up
+            </button>
+          }
+
+          {/* <button onClick={handleUseSignUp} className="w-full bg-blue-500 text-white py-2 rounded my-4">
             Sign Up
-          </button>
+          </button> */}
           <div className="text-center">
             <span className="text-gray-400">Already have an account? </span>
             <Link onClick={() => setCurrentModal('login')} className="text-blue-500 hover:underline">Sign In.</Link>
           </div>
         </div>
       </div>
+      {
+        msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+      }
     </div>
   )
 }
