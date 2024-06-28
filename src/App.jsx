@@ -28,7 +28,7 @@ function App() {
 
   return (
     <HashRouter>
-      <TopNav setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} desktopSidenav={desktopSidenav}/>
+      <TopNav setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} baseUrl={baseUrl} desktopSidenav={desktopSidenav}/>
       <div className='flex items-start'>
         <SideNav desktopSidenav={desktopSidenav} setCurrentModal={setCurrentModal}/>
         <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto'} >

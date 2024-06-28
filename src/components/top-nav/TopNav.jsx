@@ -13,12 +13,12 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 import Cookies from 'js-cookie';
 
-const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
+const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) => {
 
   const navigate = useNavigate()
   const [profileNav, setProfileNav] = useState(false)
   const user = Cookies.get('token')
-  console.log(JSON.parse(localStorage.getItem('user_details')).profile_pic);
+  // console.log(JSON.parse(localStorage.getItem('user_details')).profile_pic);
 
   console.log(user);
   
@@ -48,8 +48,8 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
           </div>
           {
                 user ?
-                <div className='rounded-full w-[35px] mb-2 mx-auto p-5 cursor-pointer bg-primary-color' onClick={() => setProfileNav(!profileNav)}>
-                    <img src={JSON.parse(localStorage.getItem('user_details')).profile_pic} className='w-full mx-auto rounded-full' alt="" />
+                <div className='rounded-full w-[35px] mb-2 mx-auto cursor-pointer bg-primary-color' onClick={() => setProfileNav(!profileNav)}>
+                    <img src={`${baseUrl}${JSON.parse(localStorage.getItem('user_details'))?.profile_pic}`} className='w-full mx-auto rounded-full' alt="" />
                 </div>
                 :
                 <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>
@@ -62,6 +62,7 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
           <p className='py-[10px] px-7 ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => setCurrentModal('register')}>SIGN UP</p>
         </div>
       }
+
       {
         profileNav &&
         <div className='absolute bg-profile-nav-bg right-[10px] w-[200px] top-[75px] text-color py-2 rounded-[5px]'>
@@ -91,6 +92,7 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
           </div>
           <div onClick={() => {
             localStorage.clear()
+            Cookies.remove('token')
             window.location.assign('/')
           }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer border-t border-gray-800'>
             <IoWalletOutline className='text-[18px]'/>
