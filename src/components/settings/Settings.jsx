@@ -1,14 +1,105 @@
 import React, { useState } from 'react'
 import { HiEyeOff } from 'react-icons/hi'
 import { HiEye } from 'react-icons/hi2'
+import Alert from '../alert/Alert'
+import Cookies from 'js-cookie'
+import BtnLoader from '../btn-loader/BtnLoader'
 
-const Settings = ({setCurrentModal}) => {
+const Settings = ({setCurrentModal, baseUrl}) => {
 
   const settingsTypeArray = ["Phone", "Password"]
   const [selectedTab, setSelectedTab] = useState(settingsTypeArray[0])
   const [selectedTabIndex, setSelectedTabIndex] = useState(0)
 
+  const [phone, setPhone] = useState('')
+
   const [passwordType, setPasswordType] = useState('password')
+
+  const [msg, setMsg] = useState()
+  const [alertType, setAlertType] = useState()
+  const [loading, setLoading] = useState(false)
+
+  const [password_old, setOldPassword] = useState('')
+  const [password_new, setNewPassword] = useState('')
+  const [password_confirm, setConfirmPassword] = useState('')
+
+  const user = Cookies.get('token')
+
+  async function updatePhoneNumber(){
+    if(!phone){
+      setMsg('Please enter phone number')
+      setAlertType('error')
+      return
+    }else{
+      setLoading(true)
+      const res = await fetch(`${baseUrl}/auth/update_phonenumber`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${user}`
+        },
+        body: JSON.stringify({
+          phone_number: phone
+        })
+      })
+      const data = await res.json()
+      console.log(res, data);
+      if(res) setLoading(false)
+      if(!res.ok){
+          setAlertType('error')
+          setMsg(data.error_message)
+          return
+      }
+      if(res.ok){
+          setAlertType('success')
+          setMsg('Phone Number Updated Successfully')
+          return
+      }
+    }
+  }
+
+  async function updatePassword(){
+    if(!password_old || !password_new || !password_confirm){
+      setMsg('Please fill in all fields')
+      setAlertType('error')
+      return
+    }else if(password_new !== password_confirm){
+      setMsg('Passwords do not match')
+      setAlertType('error')
+      return
+    }else{
+      console.log({
+        password_old,
+        password_new,
+        password_confirm
+      });
+      setLoading(true)
+      const res = await fetch(`${baseUrl}/auth/update_password`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${user}`
+        },
+        body: JSON.stringify({
+          password_old,
+          password_new,
+          password_confirm
+        })
+      })
+      const data = await res.json()
+      console.log(res, data);
+      if(res) setLoading(false)
+      if(!res.ok){
+          setAlertType('error')
+          setMsg(data.error_message)
+          return
+      }
+      if(res.ok){
+          setMsg("Password was successfully updated")
+          setAlertType('success')
+      }
+    }
+  }
 
   return (
     <div>
@@ -40,9 +131,15 @@ const Settings = ({setCurrentModal}) => {
                       type="text" 
                       placeholder="+123-456-789" 
                       className="w-full text-white bg-transparent outline-none"
+                      onChange={e => setPhone(e.target.value)}
                     />
                   </div>
-                  <button className="w-full bg-blue-500 text-white py-2 rounded">Update Contact</button>
+                  {
+                    loading ?
+                    <BtnLoader/>
+                    :
+                    <button onClick={updatePhoneNumber} className="w-full bg-blue-500 text-white py-2 rounded">Update Contact</button>
+                  }
                 </div>
               }
 
@@ -56,6 +153,7 @@ const Settings = ({setCurrentModal}) => {
                         type={passwordType} 
                         placeholder="********" 
                         className="w-full text-white bg-transparent outline-none"
+                        onChange={e => setOldPassword(e.target.value)}
                       />
                       {
                         passwordType === "password" ?
@@ -72,6 +170,7 @@ const Settings = ({setCurrentModal}) => {
                         type={passwordType} 
                         placeholder="********" 
                         className="w-full text-white bg-transparent outline-none"
+                        onChange={e => setNewPassword(e.target.value)}
                       />
                       {
                         passwordType === "password" ?
@@ -88,6 +187,7 @@ const Settings = ({setCurrentModal}) => {
                         type={passwordType} 
                         placeholder="********" 
                         className="w-full text-white bg-transparent outline-none"
+                        onChange={e => setConfirmPassword(e.target.value)}
                       />
                       {
                         passwordType === "password" ?
@@ -97,11 +197,20 @@ const Settings = ({setCurrentModal}) => {
                       }
                     </div>
                   </div>
-                  <button className="w-full bg-blue-500 text-white py-2 rounded">Update Password</button>
+                  {
+                    loading ?
+                    <BtnLoader/>
+                    :
+                    <button onClick={updatePassword} className="w-full bg-blue-500 text-white py-2 rounded">Update Password</button>
+                  }
+                  
                 </>
               }
             </div>
         </div>
+        {
+          msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+        }
     </div>
   )
 }

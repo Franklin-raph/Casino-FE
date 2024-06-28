@@ -3,6 +3,9 @@ import { TbCurrencyNaira } from "react-icons/tb";
 
 
 const Wallet = ({setCurrentModal}) => {
+
+    const userProfile = JSON.parse(localStorage.getItem('user_details'))
+
   return (
     <div>
         <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
@@ -16,7 +19,7 @@ const Wallet = ({setCurrentModal}) => {
                     <p className='text-[20px]'>Cash</p>
                     <div className='font-[700] text-[22px] flex items-center justify-center text-center mt-2 text-green-500'>
                         <TbCurrencyNaira />
-                        <p>1,000</p>
+                        <p className='font-[700]'>{userProfile && userProfile?.balance}</p>
                     </div>
                     <p className='text-center bg-primary-color rounded-full py-1 mt-2 cursor-pointer'>Deposit Now</p>
                 </div>
@@ -24,7 +27,8 @@ const Wallet = ({setCurrentModal}) => {
                     <p className='text-[20px]'>Bonus</p>
                     <div className='font-[700] text-[22px] flex items-center justify-center text-center mt-2 text-green-500'>
                         <TbCurrencyNaira />
-                        <p>1,000</p>
+                        <p className='font-[700]'>{userProfile && userProfile?.bonus}</p>
+                        {/* <p>1,000</p> */}
                     </div>
                     <p className='text-center bg-primary-color rounded-full py-1 mt-2 cursor-pointer'>Get Bonus</p>
                 </div>

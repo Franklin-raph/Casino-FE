@@ -12,12 +12,14 @@ import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 import Cookies from 'js-cookie';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) => {
 
   const navigate = useNavigate()
   const [profileNav, setProfileNav] = useState(false)
   const user = Cookies.get('token')
+  const userProfile = JSON.parse(localStorage.getItem('user_details'))
   // console.log(JSON.parse(localStorage.getItem('user_details')).profile_pic);
 
   console.log(user);
@@ -39,7 +41,10 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
           <div className='flex items-center gap-8'>
             <div className='flex items-center gap-2 text-color hover:text-white cursor-pointer text-[18px] font-[600] bg-primary-color pl-1 pr-3 py-1 rounded-[50px]'>
               <GiCash className='p-2 bg-profile-nav-bg text-[35px] rounded-full' />
-              <p>$5,000</p>
+              <p className='flex items-center'>
+                  <TbCurrencyNaira className='text-[22px] mr-[2px]'/>
+                  {userProfile && userProfile?.balance}
+                </p>
             </div>
             <div onClick={() => setCurrentModal('deposit')} className='flex items-center gap-1 text-color bg-primary-color py-2 px-3 cursor-pointer rounded-full'>
               <FaPlus />

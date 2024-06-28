@@ -5,9 +5,10 @@ import { CiUser } from "react-icons/ci";
 import { HiPencil } from "react-icons/hi2";
 
 
-const Profile = ({setCurrentModal}) => {
+const Profile = ({setCurrentModal, baseUrl}) => {
 
     const userProfile = JSON.parse(localStorage.getItem('user_details'))
+    console.log(userProfile);
 
   return (
     <div>
@@ -29,14 +30,14 @@ const Profile = ({setCurrentModal}) => {
                                     <CiUser className='text-[60px]'/> 
                                     :
                                     <div className='rounded-full border-[3px] border-color w-[100px] mb-2 mx-auto'>
-                                        <img src={userProfile.profile_pic } className='w-full mx-auto rounded-full' alt="" />
+                                        <img src={`${baseUrl}${JSON.parse(localStorage.getItem('user_img'))}`} className='w-full mx-auto rounded-full' alt="" />
                                     </div>
                                 }
                             </div>
                         }
                         <p className='font-bold text-[20px]'>Franklin Raphael</p>
                         <div className='flex items-center gap-4 text-color'>
-                            <p>ID: <span className='font-[700]'>{userProfile && userProfile.id}</span> </p>
+                            <p>ID: <span className='font-[700]'>{userProfile && userProfile?.id}</span> </p>
                             <IoCopyOutline  className='text-color cursor-pointer'/>
                         </div>
                     </div>
@@ -47,15 +48,15 @@ const Profile = ({setCurrentModal}) => {
                 <div className='grid grid-cols-3 mt-5 gap-3'>
                     <div className='text-center bg-side-nav-bg py-3 rounded-[6px]'>
                         <p className='text-color mb-2'>Joined</p>
-                        <p className='font-[700]'>{userProfile && new Date(userProfile.created_at).toDateString()}</p>
+                        <p className='font-[700]'>{userProfile && new Date(userProfile?.created_at).toDateString()}</p>
                     </div>
                     <div className='text-center bg-side-nav-bg py-3 rounded-[6px]'>
-                        <p className='text-color mb-2'>Total Bet</p>
-                        <p className='font-[700]'>0</p>
+                        <p className='text-color mb-2'>Total Balance</p>
+                        <p className='font-[700]'>{userProfile && userProfile?.balance}</p>
                     </div>
                     <div className='text-center bg-side-nav-bg py-3 rounded-[6px]'>
                         <p className='text-color mb-2'>Total Bonus</p>
-                        <p className='font-[700]'>{userProfile && userProfile.bonus}</p>
+                        <p className='font-[700]'>{userProfile && userProfile?.bonus}</p>
                     </div>
                 </div>
             </div>
