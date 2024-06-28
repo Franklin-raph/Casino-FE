@@ -50,6 +50,7 @@ const Register = ({setCurrentModal, baseUrl}) => {
         })
       })
       const data = await res.json()
+      console.log(data);
       if(res) setLoading(false)
       if(!res.ok){
         setAlertType('error')
@@ -58,7 +59,7 @@ const Register = ({setCurrentModal, baseUrl}) => {
       }
       if(res.ok){
         setAlertType('success')
-        setMsg(data.message)
+        setMsg('Registeration was successfull')
         setTimeout(() => {
           setCurrentModal('login')
         }, 2000);

@@ -8,7 +8,7 @@ import { HiPencil } from "react-icons/hi2";
 const Profile = ({setCurrentModal, baseUrl}) => {
 
     const userProfile = JSON.parse(localStorage.getItem('user_details'))
-    console.log(userProfile);
+    console.log(userProfile.profile_pic);
 
   return (
     <div>
@@ -30,7 +30,7 @@ const Profile = ({setCurrentModal, baseUrl}) => {
                                     <CiUser className='text-[60px]'/> 
                                     :
                                     <div className='rounded-full border-[3px] border-color w-[100px] mb-2 mx-auto'>
-                                        <img src={`${baseUrl}${JSON.parse(localStorage.getItem('user_img'))}`} className='w-full mx-auto rounded-full' alt="" />
+                                        <img src={`${baseUrl}${userProfile.profile_pic}`} className='w-full mx-auto rounded-full' alt="" />
                                     </div>
                                 }
                             </div>

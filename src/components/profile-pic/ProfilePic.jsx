@@ -62,7 +62,16 @@ const ProfilePic = ({setCurrentModal, baseUrl}) => {
                     </div>
                 </div>
                 <div className='flex items-center justify-center mt-3'>
-                    <p onClick={updateProfilePic} className='text-center inline-flex justify-center items-center text-color bg-primary-color py-2 px-3 cursor-pointer rounded-[6px] text-[12px]'>Use Image</p>
+                    {
+                        loading? (
+                            <div className='flex items-center  bg-primary-color py-2 px-3 rounded-[6px] justify-center'>
+                                <img src="./images/loader.gif" className='w-[20px]' alt="" />
+                            </div>
+                        ) : 
+                        <p onClick={updateProfilePic} className='text-center inline-flex justify-center items-center text-color bg-primary-color py-2 px-3 cursor-pointer rounded-[6px] text-[12px]'>Use Image</p>
+                    }
+                    
+                    {/* <img src="./images/loader.gif" className='w-[20px]' alt="" /> */}
                 </div>
                 <div className='grid grid-cols-5 mt-5 bg-side-nav-bg p-3 gap-3 rounded-[6px] place-items-center'>
                     {
