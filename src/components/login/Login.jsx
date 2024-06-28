@@ -3,6 +3,8 @@ import { HiEye, HiEyeOff } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
 import Alert from '../alert/Alert'
 import BtnLoader from '../btn-loader/BtnLoader'
+import Cookies from 'js-cookie';
+
 
 const Login = ({setCurrentModal, baseUrl}) => {
 
@@ -35,12 +37,15 @@ const Login = ({setCurrentModal, baseUrl}) => {
       const data = await res.json()
       if(res) setLoading(false)
       console.log(data);
-      if(!res.ok){
-        setAlertType('error')
-        setMsg(data.error_message)
-        return
-      }else{
-        localStorage.setItem('casino-email', email)
+    if(!res.ok){
+      setAlertType('error')
+      setMsg(data.error_message)
+      return
+    }else{
+        const { user_details, admin_account_details } = data;
+        localStorage.setItem('user_details', JSON.stringify(user_details));
+        localStorage.setItem('admin_account_details', JSON.stringify(admin_account_details));
+        Cookies.set('token', data.key);
         window.location.assign('/')
       }
     }

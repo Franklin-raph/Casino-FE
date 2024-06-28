@@ -40,10 +40,10 @@ const SideNav = ({desktopSidenav, setCurrentModal}) => {
             </button>
 
             {
-              localStorage.getItem('casino-email') &&
+              localStorage.getItem('user_details') &&
               <div onClick={() => setCurrentModal('profile')} className='cursor-pointer absolute left-0 bottom-0 flex items-center gap-[15px] text-color pl-[1.5em] bg-profile-nav-bg py-2 rounded-[4px] w-full hover:text-white hover:border-color border border-transparent'>
                 <HiOutlineUser />
-                <p>{ localStorage.getItem('casino-email') }</p>
+                <p>{JSON.parse(localStorage.getItem('user_details')).email}</p>
               </div>
             }
           </div>
@@ -74,7 +74,7 @@ const SideNav = ({desktopSidenav, setCurrentModal}) => {
             </button>
 
             {
-              localStorage.getItem('casino-email') &&
+              localStorage.getItem('user_details') &&
               <div onClick={() => setCurrentModal('profile')} className='absolute cursor-pointer left-0 bottom-0 flex items-center gap-[15px] text-color justify-center bg-profile-nav-bg py-2 rounded-[4px] w-full hover:text-white hover:border-color border border-transparent'>
                 <HiOutlineUser />
                 {/* <p>{ localStorage.getItem('casino-email') }</p> */}

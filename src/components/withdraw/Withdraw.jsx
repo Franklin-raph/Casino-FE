@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { IoChevronDown } from 'react-icons/io5'
 import { FiLoader } from "react-icons/fi";
 import { TbCurrencyNaira } from 'react-icons/tb';
+import Alert from '../alert/Alert';
+import BtnLoader from '../btn-loader/BtnLoader';
+import Cookies from 'js-cookie';
 
-const Withdraw = ({setCurrentModal}) => {
+const Withdraw = ({setCurrentModal, baseUrl}) => {
 
     const [bankListDropDown, setBankListDropDown] = useState(false)
     const [accountName, setAccountName] = useState('')
@@ -12,6 +15,12 @@ const Withdraw = ({setCurrentModal}) => {
     const [accNum, setAccNum] = useState('')
     const [bankCode, setBankCode] = useState('')
     const [accInfoLoading, setAccInfoLoading] = useState(false)
+    const [amount, setAmount] = useState('')
+
+    const [msg, setMsg] = useState()
+    const [alertType, setAlertType] = useState()
+    const [loading, setLoading] = useState(false)
+    const user = Cookies.get('token')
 
     useEffect(() => {
         getListOfBanks()
@@ -51,6 +60,43 @@ const Withdraw = ({setCurrentModal}) => {
             setMsg(data.message)
             return
         }
+            console.log(data);
+        }
+    }
+
+    async function requestWithdrawal(){
+        if(!selectedBank ||!accNum ||!amount){
+            setAlertType('error')
+            setMsg('Please fill all the fields')
+            return
+        }else{
+            setLoading(true)
+            const res = await fetch(`${baseUrl}/withdraw`,{
+                method: 'POST',
+                headers : {
+                    'Authorization': `Token ${user}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    amount, // amount in naira
+                    account_number: accNum,
+                    account_name: accountName,
+                    bank_name: selectedBank,
+                })
+            })
+            const data = await res.json()
+            if(res) setLoading(false)
+            if(!res.ok){
+                setAlertType('error')
+                setMsg(data.error_message)
+                return
+            }
+            if(res.ok){
+                setAlertType('success')
+                setMsg('Withdrawal request sent successfully')
+                setCurrentModal('')
+                return
+            }
             console.log(data);
         }
     }
@@ -108,15 +154,24 @@ const Withdraw = ({setCurrentModal}) => {
                         <TbCurrencyNaira className='text-[22px] mr-[2px]'/>
                         <input
                         type="text" 
-                        placeholder="90,000" 
+                        placeholder="90,000"
+                        onChange={e => setAmount(e.target.value)}
                         className="w-full text-white bg-transparent outline-none"
                         />
                     </div>
                   </div>
-                  <button className="w-full bg-blue-500 text-white py-2 rounded">Place Withdrawal Request</button>
+                  {
+                    loading?
+                    <BtnLoader/>
+                    :
+                    <button onClick={requestWithdrawal} className="w-full bg-blue-500 text-white py-2 rounded">Place Withdrawal Request</button>
+                }
                 </div>
             </div>
         </div>
+        {
+            msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+        }
     </div>
   )
 }

@@ -11,12 +11,16 @@ import { BsClockHistory } from "react-icons/bs";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
-
+import Cookies from 'js-cookie';
 
 const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
 
   const navigate = useNavigate()
   const [profileNav, setProfileNav] = useState(false)
+  const user = Cookies.get('token')
+  console.log(JSON.parse(localStorage.getItem('user_details')).profile_pic);
+
+  console.log(user);
   
 
   return (
@@ -30,7 +34,7 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
         </div>
       </div>
       {
-        localStorage.getItem('casino-email') ?
+        user ?
         <div className='flex items-center gap-10'>
           <div className='flex items-center gap-8'>
             <div className='flex items-center gap-2 text-color hover:text-white cursor-pointer text-[18px] font-[600] bg-primary-color pl-1 pr-3 py-1 rounded-[50px]'>
@@ -43,9 +47,9 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav}) => {
             </div>
           </div>
           {
-                localStorage.getItem('casino-img') ?
-                <div className='rounded-full w-[35px] mb-2 mx-auto cursor-pointer' onClick={() => setProfileNav(!profileNav)}>
-                    <img src={localStorage.getItem('casino-img')} className='w-full mx-auto rounded-full' alt="" />
+                user ?
+                <div className='rounded-full w-[35px] mb-2 mx-auto p-5 cursor-pointer bg-primary-color' onClick={() => setProfileNav(!profileNav)}>
+                    <img src={JSON.parse(localStorage.getItem('user_details')).profile_pic} className='w-full mx-auto rounded-full' alt="" />
                 </div>
                 :
                 <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>

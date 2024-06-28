@@ -21,12 +21,12 @@ const Register = ({setCurrentModal, baseUrl}) => {
   const [passwordType, setPasswordType] = useState('password')
 
   async function handleUseSignUp(){
-    setLoading(true)
     if(!email || !password || !first_name || !last_name || !phone_number || !password_confirm){
       setMsg('Please fill all the fields')
       setAlertType('error')
       return
     }else{
+      setLoading(true)
       console.log(JSON.stringify({
         email: email,
         password:password,
@@ -55,6 +55,13 @@ const Register = ({setCurrentModal, baseUrl}) => {
         setAlertType('error')
         setMsg(data.error_message)
         return
+      }
+      if(res.ok){
+        setAlertType('success')
+        setMsg(data.message)
+        setTimeout(() => {
+          setCurrentModal('login')
+        }, 2000);
       }
     }
   }
