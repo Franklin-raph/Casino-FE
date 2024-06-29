@@ -60,7 +60,7 @@ const Footer = () => {
       <div className='bg-profile-nav-bg flex items-start justify-between md:flex-row flex-col gap-[2rem] md:gap-[5rem] mt-[2rem] py-[3rem] lg:px-12 px-8'>
         <div className='w-full'>
           <Link to="/" className='mb-5 inline-block'>
-            <img src="./images/vite.svg" alt=""className='w-[50px]' />
+            <img src="./images/logo.png" alt=""className='w-[70px]' />
           </Link>
           <p className='text-[14px] md:text-[16px] text-gray-400'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus asperiores impedit consequuntur in officiis molestiae porro perspiciatis enim, excepturi reprehenderit ab, aut quaerat facilis voluptate doloribus a hic odio veniam maiores! Ratione illum illo enim quasi at voluptatum numquam. Laboriosam?

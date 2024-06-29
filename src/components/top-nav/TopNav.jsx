@@ -29,7 +29,7 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
     <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.8rem] fixed w-full z-[99]'>
       <div className='flex items-center gap-[3rem]' onClick={() => setDesktopSideNav(!desktopSidenav)}>
         <MdMenuOpen className='text-color text-[30px] cursor-pointer'/>
-        <Link to="/"> <img src="./images/vite.svg" alt="" /> </Link>
+        <Link to="/"> <img src="./images/logo.png" className='w-[40px]' /> </Link>
         <div className='flex items-center text-white text-[18px] gap-2 py-2 px-4 rounded-[5px] gradient-btn'>
           <ImSpades />
           <p>Casino</p>
@@ -52,13 +52,13 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
             </div>
           </div>
           {
-                user ?
-                <div className='rounded-full w-[35px] mb-2 mx-auto cursor-pointer bg-primary-color' onClick={() => setProfileNav(!profileNav)}>
-                    <img src={`${baseUrl}${JSON.parse(localStorage.getItem('user_details'))?.profile_pic}`} className='w-full mx-auto rounded-full' alt="" />
-                </div>
-                :
-                <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>
-            }
+            user ?
+            <div className='rounded-full w-[35px] mb-2 mx-auto cursor-pointer bg-primary-color' onClick={() => setProfileNav(!profileNav)}>
+                <img src={`${baseUrl}${JSON.parse(localStorage.getItem('user_details'))?.profile_pic}`} className='w-full mx-auto rounded-full' alt="" />
+            </div>
+            :
+            <HiOutlineUser className='text-color text-[26px] cursor-pointer hover:text-white' onClick={() => setProfileNav(!profileNav)}/>
+          }
           
         </div>
         :
