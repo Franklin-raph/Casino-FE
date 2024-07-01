@@ -70,7 +70,7 @@ const Register = ({setCurrentModal, baseUrl}) => {
   return (
     <div>
       <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
-      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-6 max-w-[700px] mx-auto w-full z-[101] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-6 md:max-w-[700px] mx-auto w-[90%] z-[101] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="./images/logo.png" className='mx-auto mb-4 w-[100px]' alt="" />
         <div className=''>
           <div className="flex justify-between items-center mb-8">
@@ -78,7 +78,7 @@ const Register = ({setCurrentModal, baseUrl}) => {
             <button className="text-gray-400 hover:text-white text-[30px] absolute top-2 right-6" onClick={() => setCurrentModal('')}>&times;</button>
           </div>
 
-          <div className='flex items-center gap-[10px] w-full'>
+          <div className='flex flex-col sm:flex-row items-center gap-[10px] w-full'>
             <div className='w-full'>
               <label className='text-color text-[14px]'>First Name</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded mb-4'>
@@ -104,7 +104,7 @@ const Register = ({setCurrentModal, baseUrl}) => {
             </div>
           </div>
 
-          <div className='flex items-center gap-[10px] w-full my-4'>
+          <div className='flex flex-col sm:flex-row items-center gap-[10px] w-full my-4'>
             <div className='w-full'>
               <label className='text-color text-[14px]'>Email</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded'>
@@ -117,7 +117,7 @@ const Register = ({setCurrentModal, baseUrl}) => {
               </div>
             </div>
 
-            <div className='w-full'>
+            <div className='w-full my-4'>
               <label className='text-color text-[14px]'>Phone Number</label>
               <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded'>
                 <input
@@ -130,8 +130,8 @@ const Register = ({setCurrentModal, baseUrl}) => {
             </div>
           </div>
 
-          <div className='flex items-center gap-[10px] w-full'>
-            <div className='mt-4 w-full'>
+          <div className='flex flex-col sm:flex-row items-center gap-[10px] w-full'>
+            <div className='w-full'>
               <label className='text-color text-[14px]'>Password</label>
               <div className='flex items-center py-2 px-4 rounded mb-4 w-full border border-transparent bg-gray-800 hover:border-[#5A78FF]'>
                 <input

@@ -54,7 +54,7 @@ const Login = ({setCurrentModal, baseUrl}) => {
   return (
     <div>
       <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
-      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-8 max-w-md mx-auto w-full z-[101] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-8 md:max-w-md mx-auto w-[90%] z-[101] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="./images/logo.png" className='mx-auto mb-4 w-[100px]' alt="" />
         <div className=''>
           <div className="flex justify-between items-center mb-8">
@@ -99,9 +99,9 @@ const Login = ({setCurrentModal, baseUrl}) => {
             </button>
           }
 
-          <div className="text-center mb-4">
+          {/* <div className="text-center mb-4">
             <Link to="/" className="text-gray-400 hover:text-white">Forgot Password?</Link>
-          </div>
+          </div> */}
           <div className="text-center">
             <span className="text-gray-400">Don't have an account? </span>
             <Link  onClick={() => setCurrentModal('register')}  className="text-blue-500 hover:underline">Sign Up</Link>
