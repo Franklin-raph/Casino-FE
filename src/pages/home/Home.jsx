@@ -76,6 +76,32 @@ const Home = ({setCurrentModal}) => {
     autoplaySpeed: 3000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   let gamesCarouselSettings = {
@@ -90,6 +116,41 @@ const Home = ({setCurrentModal}) => {
     autoplaySpeed: 3000,
     nextArrow: <GameNextArrow />,
     prevArrow: <GamePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   const announcement = ["I can be a React component, multiple React components, or just some text.", "I can be a React component, multiple React components, or just some text.", "I can be a React component, multiple React components, or just some text.", "I can be a React component, multiple React components, or just some text."]
@@ -145,7 +206,7 @@ const Home = ({setCurrentModal}) => {
             <MdOutlineRecommend className='text-[30px]'/>
             <p className='text-white font-[700]'>Recomended</p>
           </div>
-          <p className='mr-[6rem] text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
+          <p className='text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
         </div>
 
         <div >
@@ -238,7 +299,7 @@ const Home = ({setCurrentModal}) => {
             <MdOutlineStarRate className='text-[30px]'/>
             <p className='text-white font-[700]'>Top Rated</p>
           </div>
-          <p className='mr-[6rem] text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
+          <p className=' text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
         </div>
 
         <div >
@@ -332,7 +393,7 @@ const Home = ({setCurrentModal}) => {
             <PiClockClockwise className='text-[30px]'/>
             <p className='text-white font-[700]'>Recent</p>
           </div>
-          <p className='mr-[6rem] text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
+          <p className=' text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
         </div>
 
         <div >
@@ -424,7 +485,7 @@ const Home = ({setCurrentModal}) => {
             <MdSportsFootball className='text-[30px]'/>
             <p className='text-white font-[700]'>Popular</p>
           </div>
-          <p className='mr-[6rem] text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
+          <p className=' text-color cursor-pointer bg-[#1f29374d] py-[6px] px-[10px] rounded-[5px] font-[600]'>More 22</p>
         </div>
 
         <div >

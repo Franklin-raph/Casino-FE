@@ -15,7 +15,7 @@ const Casual = () => {
                 <input type="text" className='bg-transparent outline-none px-4' placeholder='Search Games'/>
             </div>
         </div>
-        <div className='grid gap-5 grid-cols-5 mt-10'>
+        <div className='grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-10'>
           <div className='rounded-[6px] relative card-parent cursor-pointer'>
             <div className='hover-bg flex items-center justify-center'>
               <button className='cursor-pointer bg-[#5A78FF] text-white px-6 py-1 rounded-[3px]'>Play</button>

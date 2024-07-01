@@ -53,26 +53,28 @@
 
 .game-arrow-prev{
   position: absolute;
-  right: 5% !important;
-  top: -29% !important;
+  left: -0.8% !important;
+  top: 35% !important;
   font-size: 35px !important;
-  z-index: 1;
-  background-color: rgb(31 41 55 / 0.3) !important;
-  padding: 6px !important;
+  z-index: 99;
+  background-color: rgb(31 41 55) !important;
+  padding: 8px !important;
   border-radius: 5px !important;
+  /* opacity: 0; */
   transition: .5s;
   cursor: pointer;
 }
 
 .game-arrow-next {
   position: absolute;
-  right: 1% !important;
-  top: -29% !important;
+  right: -0.8% !important;
+  top: 35% !important;
   font-size: 35px !important;
-  z-index: 1;
-  background-color: rgb(31 41 55 / 0.3) !important;
-  padding: 6px !important;
+  z-index: 99;
+  background-color: rgb(31 41 55) !important;
+  padding: 8px !important;
   border-radius: 5px !important;
+  /* opacity: 0; */
   transition: .5s;
   cursor: pointer;
 }

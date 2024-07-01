@@ -30,7 +30,7 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
       <div className='flex items-center gap-[3rem]' onClick={() => setDesktopSideNav(!desktopSidenav)}>
         <MdMenuOpen className='text-color text-[30px] cursor-pointer'/>
         <Link to="/"> <img src="./images/logo.png" className='w-[40px]' /> </Link>
-        <div className='flex items-center text-white text-[18px] gap-2 py-2 px-4 rounded-[5px] gradient-btn'>
+        <div className='md:flex items-center text-white text-[18px] gap-2 py-2 px-4 rounded-[5px] gradient-btn hidden'>
           <ImSpades />
           <p>Casino</p>
         </div>
@@ -39,14 +39,14 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
         user ?
         <div className='flex items-center gap-10'>
           <div className='flex items-center gap-8'>
-            <div className='flex items-center gap-2 text-color hover:text-white cursor-pointer text-[18px] font-[600] bg-primary-color pl-1 pr-3 py-1 rounded-[50px]'>
+            <div className='hidden md:flex items-center gap-2 text-color hover:text-white cursor-pointer text-[18px] font-[600] bg-primary-color pl-1 pr-3 py-1 rounded-[50px]'>
               <GiCash className='p-2 bg-profile-nav-bg text-[35px] rounded-full' />
               <p className='flex items-center'>
                   <TbCurrencyNaira className='text-[22px] mr-[2px]'/>
                   {userProfile && userProfile?.balance}
                 </p>
             </div>
-            <div onClick={() => setCurrentModal('deposit')} className='flex items-center gap-1 text-color bg-primary-color py-2 px-3 cursor-pointer rounded-full'>
+            <div onClick={() => setCurrentModal('deposit')} className='hidden md:flex items-center gap-1 text-color bg-primary-color py-2 px-3 cursor-pointer rounded-full'>
               <FaPlus />
               <p>Deposit</p>
             </div>
@@ -94,6 +94,17 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
           <div onClick={() => setCurrentModal('settings')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <HiOutlineCog6Tooth className='text-[18px]'/>
             <p>Settings</p>
+          </div>
+          <div onClick={() => setCurrentModal('deposit')}  className='md:hidden flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+            <FaPlus className='text-[18px]'/>
+            <p>Deposit</p>
+          </div>
+          <div  className='md:hidden flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+            <GiCash className='bg-profile-nav-bg text-[22px] rounded-full' />
+            <p className='flex items-center'>
+                <TbCurrencyNaira className='text-[18px]'/>
+                {userProfile && userProfile?.balance}
+              </p>
           </div>
           <div onClick={() => {
             localStorage.clear()
