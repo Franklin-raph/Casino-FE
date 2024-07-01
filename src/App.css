@@ -148,3 +148,27 @@
 .card-parent{
   overflow: hidden;
 }
+
+@media screen and (max-width:900px) {
+  .nav-toggle-1, .desktop-nav{
+    display: none !important;
+  }
+
+  .mobile-view{
+    width: 100% !important;
+  }
+
+  .mobile-nav{
+    position: absolute;
+    left: -800px;
+    top: 0;
+    width: 70% !important;
+    z-index: 10000;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .mobile-nav.open {
+    left: 0; /* Visible when open */
+    transition: left 0.3s ease-in-out;
+  }
+}

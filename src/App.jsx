@@ -26,12 +26,14 @@ function App() {
   const [desktopSidenav, setDesktopSideNav] = useState(true)
   const baseUrl = "https://heavyheat56.pythonanywhere.com"
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <HashRouter>
-      <TopNav setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} baseUrl={baseUrl} desktopSidenav={desktopSidenav}/>
+      <TopNav setIsOpen={setIsOpen} isOpen={isOpen} setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} baseUrl={baseUrl} desktopSidenav={desktopSidenav}/>
       <div className='flex items-start'>
-        <SideNav desktopSidenav={desktopSidenav} setCurrentModal={setCurrentModal}/>
-        <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto'} >
+        <SideNav setIsOpen={setIsOpen} isOpen={isOpen} desktopSidenav={desktopSidenav} setCurrentModal={setCurrentModal}/>
+        <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto mobile-view' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto mobile-view'} >
           <Routes>
             <Route path="/" element={<Home setCurrentModal={setCurrentModal}/>} />
             <Route path="/casual" element={<Casual baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />

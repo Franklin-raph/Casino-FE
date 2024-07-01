@@ -14,7 +14,7 @@ import { FaPlus } from "react-icons/fa6";
 import Cookies from 'js-cookie';
 import { TbCurrencyNaira } from 'react-icons/tb';
 
-const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) => {
+const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl, isOpen, setIsOpen}) => {
 
   const navigate = useNavigate()
   const [profileNav, setProfileNav] = useState(false)
@@ -23,12 +23,19 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
   // console.log(JSON.parse(localStorage.getItem('user_details')).profile_pic);
 
   console.log(user);
+
+  function toggleNav(){
+    setIsOpen(!isOpen);
+    console.log(isOpen);
+  }
+
   
 
   return (
-    <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.8rem] fixed w-full z-[99]'>
-      <div className='flex items-center gap-[3rem]' onClick={() => setDesktopSideNav(!desktopSidenav)}>
-        <MdMenuOpen className='text-color text-[30px] cursor-pointer'/>
+    <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.8rem] fixed w-full z-[10001]'>
+      <div className='flex items-center gap-[1rem]'>
+        <MdMenuOpen className='text-color text-[30px] cursor-pointer nav-toggle-1' onClick={() => setDesktopSideNav(!desktopSidenav)}/>
+        <MdMenuOpen className='text-color text-[30px] cursor-pointer nav-toggle-2' onClick={toggleNav}/>
         <Link to="/"> <img src="./images/logo.png" className='w-[40px]' /> </Link>
         <div className='md:flex items-center text-white text-[18px] gap-2 py-2 px-4 rounded-[5px] gradient-btn hidden'>
           <ImSpades />
@@ -62,9 +69,9 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl}) =
           
         </div>
         :
-        <div className='flex items-center gap-[1rem]'>
+        <div className='flex items-center gap-[1rem] text-[12px] md:text-[16px]'>
           <p className='text-color cursor-pointer' onClick={() => setCurrentModal('login')}>SIGN IN</p>
-          <p className='py-[10px] px-7 ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => setCurrentModal('register')}>SIGN UP</p>
+          <p className='py-[10px] md:px-7 px-4 md:ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => setCurrentModal('register')}>SIGN UP</p>
         </div>
       }
 
