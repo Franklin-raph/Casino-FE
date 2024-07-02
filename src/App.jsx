@@ -45,14 +45,14 @@ function App() {
           <Footer />
         </div>
       </div>
-      {/* {
+      {
         currentModal === 'login' &&
         <Login setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
-      } */}
-      {
+      }
+      {/* {
         currentModal === "join-telegram" &&
         <JoinTelegram setCurrentModal={setCurrentModal}/>
-      }
+      } */}
       {
         currentModal ==='register' &&
         <Register setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>

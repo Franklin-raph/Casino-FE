@@ -70,8 +70,8 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl, is
         </div>
         :
         <div className='flex items-center gap-[1rem] text-[12px] md:text-[16px]'>
-          {/* <p className='text-color cursor-pointer' onClick={() => setCurrentModal('login')}>SIGN IN</p> */}
-          <p className='text-color cursor-pointer' onClick={() => setCurrentModal('join-telegram')}>SIGN IN</p>
+          <p className='text-color cursor-pointer' onClick={() => setCurrentModal('login')}>SIGN IN</p>
+          {/* <p className='text-color cursor-pointer' onClick={() => setCurrentModal('join-telegram')}>SIGN IN</p> */}
           <p className='py-[10px] md:px-7 px-4 md:ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => setCurrentModal('register')}>SIGN UP</p>
         </div>
       }
