@@ -165,7 +165,7 @@ const Home = ({setCurrentModal}) => {
 
 
   return (
-    <div className='mt-8 px-[1.5rem]'>
+    <div className='mt-8 md:px-[1.5rem] px-[10px]'>
       <Slider {...topCarouselSettings}>
         <div className='rounded-[6px]'>
           <img src="./images/quk.avif" className='rounded-[6px] h-full object-contain' alt="" />

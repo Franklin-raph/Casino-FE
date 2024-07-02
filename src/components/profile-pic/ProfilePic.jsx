@@ -47,17 +47,17 @@ const ProfilePic = ({setCurrentModal, baseUrl}) => {
   return (
     <div>
         <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
-        <div className="bg-profile-nav-bg text-white shadow-lg md:max-w-[600px] mx-auto w-[90%] z-[101] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-[10px]">
+        <div className="bg-profile-nav-bg text-white shadow-lg md:max-w-[600px] mx-auto w-[90%] z-[101] fixed top-[56%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-[10px]">
             <div className='flex items-center justify-between text-2xl px-6 pb-6 modal-header rounded-t-[10px]'>
                 <div className='flex items-center gap-1 mt-6'>
                     <RxChevronLeft className='cursor-pointer' onClick={() => setCurrentModal('profile')}/>
-                    <p className='font-bold'>Change Profile Picture</p>
+                    <p className='font-bold text-[14px] sm:text-[18px]'>Change Profile Picture</p>
                 </div>
                 <p className='cursor-pointer' onClick={() => setCurrentModal('')}>&times;</p>
             </div>
             <div className='p-6'>
                 <div>
-                    <div className='rounded-full border-[3px] border-color w-[120px] mx-auto'>
+                    <div className='rounded-full border-[3px] border-color md:w-[120px] w-[100px] mx-auto'>
                         <img src={selectedImage} className='w-full mx-auto rounded-full' alt="" />
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const ProfilePic = ({setCurrentModal, baseUrl}) => {
                     
                     {/* <img src="./images/loader.gif" className='w-[20px]' alt="" /> */}
                 </div>
-                <div className='grid grid-cols-5 mt-5 bg-side-nav-bg p-3 gap-3 rounded-[6px] place-items-center'>
+                <div className='grid grid-cols-3 md:grid-cols-5 mt-5 bg-side-nav-bg p-3 gap-3 rounded-[6px] place-items-center h-[270px] md:max-w-full mx-auto max-w-[400px] overflow-y-scroll'>
                     {
                         images.map((item, index) => {
                             return (

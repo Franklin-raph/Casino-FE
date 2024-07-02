@@ -19,6 +19,7 @@ import Live from './pages/live/Live'
 import BonusGames from './pages/bonus-games/BonusGames'
 import ProfilePic from './components/profile-pic/ProfilePic'
 import Withdraw from './components/withdraw/Withdraw'
+import JoinTelegram from './components/join-telegram/JoinTelegram'
 
 function App() {
 
@@ -44,9 +45,13 @@ function App() {
           <Footer />
         </div>
       </div>
-      {
+      {/* {
         currentModal === 'login' &&
         <Login setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
+      } */}
+      {
+        currentModal === "join-telegram" &&
+        <JoinTelegram setCurrentModal={setCurrentModal}/>
       }
       {
         currentModal ==='register' &&

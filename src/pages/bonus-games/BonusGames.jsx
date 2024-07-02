@@ -5,7 +5,7 @@ import { TbTargetArrow } from 'react-icons/tb'
 
 const BonusGames = () => {
   return (
-    <div className='px-[1.5rem] py-[1rem]'>
+    <div className='md:px-[1.5rem] px-[10px] py-[1rem]'>
         <div className='flex items-center justify-between flex-col gap-[1rem] sm:flex-row'>
             <div className='flex items-center gap-2'>
                 <RiFootballLine className='md:text-[32px] text-[26px] text-color' />

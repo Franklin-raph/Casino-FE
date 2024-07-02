@@ -70,7 +70,8 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl, is
         </div>
         :
         <div className='flex items-center gap-[1rem] text-[12px] md:text-[16px]'>
-          <p className='text-color cursor-pointer' onClick={() => setCurrentModal('login')}>SIGN IN</p>
+          {/* <p className='text-color cursor-pointer' onClick={() => setCurrentModal('login')}>SIGN IN</p> */}
+          <p className='text-color cursor-pointer' onClick={() => setCurrentModal('join-telegram')}>SIGN IN</p>
           <p className='py-[10px] md:px-7 px-4 md:ml-5 rounded-[5px] gradient-btn text-white cursor-pointer'  onClick={() => setCurrentModal('register')}>SIGN UP</p>
         </div>
       }
@@ -78,31 +79,52 @@ const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl, is
       {
         profileNav &&
         <div className='absolute bg-profile-nav-bg right-[10px] w-[200px] top-[75px] text-color py-2 rounded-[5px]'>
-          <div onClick={() => setCurrentModal('wallet')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('wallet')
+          }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <IoWalletOutline className='text-[18px]'/>
             <p>Wallet</p>
           </div>
-          <div onClick={() => setCurrentModal('withdraw')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('withdraw')
+          }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <BiMoneyWithdraw className='text-[18px]'/>
             <p>Withdraw</p>
           </div>
-          <div onClick={() => setCurrentModal('profile')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('profile')
+          }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <FaRegCircleUser className='text-[18px]'/>
             <p>Profile</p>
           </div>
-          <div onClick={() => setCurrentModal('transaction')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('transaction')
+          }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <MdHistoryEdu className='text-[18px]'/>
             <p>Transaction</p>
           </div>
-          <div onClick={() => setCurrentModal('betHistory')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('betHistory')
+          }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <BsClockHistory className='text-[18px]'/>
             <p>Bet History</p>
           </div>
-          <div onClick={() => setCurrentModal('settings')} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('settings')
+          }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <HiOutlineCog6Tooth className='text-[18px]'/>
             <p>Settings</p>
           </div>
-          <div onClick={() => setCurrentModal('deposit')}  className='md:hidden flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
+          <div onClick={() => {
+            setProfileNav(false)
+            setCurrentModal('deposit')
+          }}  className='md:hidden flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <FaPlus className='text-[18px]'/>
             <p>Deposit</p>
           </div>

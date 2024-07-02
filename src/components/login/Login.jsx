@@ -66,7 +66,7 @@ const Login = ({setCurrentModal, baseUrl}) => {
             <div className='border border-transparent bg-gray-800 hover:border-[#5A78FF] py-2 px-4 rounded mb-4'>
               <input
                 type="text" 
-                placeholder="Email / Phone Number" 
+                placeholder="Email" 
                 className="w-full text-white bg-transparent outline-none"
                 onChange={e => setValue(e.target.value)}
               />
