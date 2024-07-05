@@ -57,7 +57,7 @@ const Footer = () => {
 
   return (
     <div>
-      <div className='bg-profile-nav-bg flex items-start justify-between md:flex-row flex-col gap-[2rem] md:gap-[5rem] mt-[2rem] py-[3rem] lg:px-12 px-8'>
+      <div className='bg-profile-nav-bg flex items-start justify-between md:flex-row flex-col gap-[2rem] md:gap-[2rem] mt-[2rem] py-[3rem] lg:px-12 px-8'>
         <div className='w-full'>
           <Link to="/" className='mb-5 inline-block'>
             <img src="./images/logo.png" alt=""className='w-[70px]' />
