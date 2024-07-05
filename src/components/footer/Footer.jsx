@@ -2,6 +2,10 @@ import React from 'react'
 // import footerImage from "../../assets/Group76.png"
 import { Link } from 'react-router-dom'
 // import NewsLetter from '../news-letter/NewsLetter'
+import { FaFacebook } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 
 const Footer = () => {
 
@@ -22,16 +26,16 @@ const Footer = () => {
 
   const contactLinks = [
     {
-      label:"support@casino.com",
-      url:"#"
+      label:<FaFacebook />,
+      url:"https://www.facebook.com/profile.php?id=61561209938663&mibextid=kFxxJD"
     },
     {
-      label:"help@casino.com",
-      url:"#"
+      label:<AiFillInstagram />,
+      url:"https://www.instagram.com/1arcaderoyale?igsh=MTRzNnQ2YXdjcnZzNA%3D%3D&utm_source=qr"
     },
     {
-      label:"finance@casino.com",
-      url:"#"
+      label:<IoLogoWhatsapp />,
+      url:"https://whatsapp.com/channel/0029VaiwAjwGufIp8cUJZl02"
     }
   ]
 
@@ -66,7 +70,7 @@ const Footer = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus asperiores impedit consequuntur in officiis molestiae porro perspiciatis enim, excepturi reprehenderit ab, aut quaerat facilis voluptate doloribus a hic odio veniam maiores! Ratione illum illo enim quasi at voluptatum numquam. Laboriosam?
           </p>
         </div>
-        <div className='grid grid-cols-3 gap-[2rem] w-full text-[14px]'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-[2rem] w-full text-[14px]'>
           <div>
             <h1 className='font-bold text-[15px] md:text-[17px] text-gray-200 mb-2'>About Us</h1>
             <ul>
@@ -79,10 +83,10 @@ const Footer = () => {
           </div>
           <div>
             <h1 className='font-bold text-[15px] md:text-[17px] text-gray-200 mb-2'>Contact Us</h1>
-            <ul>
+            <ul className='flex items-center gap-5'>
               {contactLinks.map(link => (
-                <li className='py-1 text-[12px] md:text-[14px] text-gray-400 hover:text-color'>
-                  <Link to={link.url}>{link.label}</Link>
+                <li className='py-1 text-[20px] text-gray-400 hover:text-color cursor-pointer'>
+                  <a target='_blank' href={link.url}>{link.label}</a>
                 </li>
               ))}
             </ul>
