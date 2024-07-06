@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { MdAutoGraph } from "react-icons/md";
 
 
-
-
 const BottomNav = ({setProfileNav, setCurrentModal,}) => {
 
     const navigate = useNavigate()
@@ -22,7 +20,7 @@ const BottomNav = ({setProfileNav, setCurrentModal,}) => {
     }
 
   return (
-    <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.5rem] fixed bottom-0 w-full z-[10001]'>
+    <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.5rem] fixed bottom-0 w-full z-[10001] md:hidden'>
         <div onClick={() => {
             setProfileNav(false)
             setCurrentModal('')
