@@ -32,7 +32,7 @@ const TopNav = ({profileNav, setProfileNav, setCurrentModal, setDesktopSideNav, 
   
 
   return (
-    <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.8rem] fixed w-full z-[10001]'>
+    <div className='flex items-center top-bg justify-between px-[1.5rem] py-[0.4rem] fixed w-full z-[10001]'>
       <div className='flex items-center gap-[1rem]'>
         <MdMenuOpen className='text-color text-[30px] cursor-pointer nav-toggle-1' onClick={() => setDesktopSideNav(!desktopSidenav)}/>
         <MdMenuOpen className='text-color text-[30px] cursor-pointer nav-toggle-2' onClick={toggleNav}/>
@@ -93,13 +93,13 @@ const TopNav = ({profileNav, setProfileNav, setCurrentModal, setDesktopSideNav, 
             <BiMoneyWithdraw className='text-[18px]'/>
             <p>Withdraw</p>
           </div>
-          <div onClick={() => {
+          {/* <div onClick={() => {
             setProfileNav(false)
             setCurrentModal('profile')
           }} className='flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <FaRegCircleUser className='text-[18px]'/>
             <p>Profile</p>
-          </div>
+          </div> */}
           <div onClick={() => {
             setProfileNav(false)
             setCurrentModal('transaction')
@@ -121,13 +121,13 @@ const TopNav = ({profileNav, setProfileNav, setCurrentModal, setDesktopSideNav, 
             <HiOutlineCog6Tooth className='text-[18px]'/>
             <p>Settings</p>
           </div>
-          <div onClick={() => {
+          {/* <div onClick={() => {
             setProfileNav(false)
             setCurrentModal('deposit')
           }}  className='md:hidden flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <FaPlus className='text-[18px]'/>
             <p>Deposit</p>
-          </div>
+          </div> */}
           <div  className='md:hidden flex items-center gap-3 py-2 px-4 hover:bg-side-nav-bg hover:text-white cursor-pointer'>
             <GiCash className='bg-profile-nav-bg text-[22px] rounded-full' />
             <p className='flex items-center'>

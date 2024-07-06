@@ -20,6 +20,7 @@ import BonusGames from './pages/bonus-games/BonusGames'
 import ProfilePic from './components/profile-pic/ProfilePic'
 import Withdraw from './components/withdraw/Withdraw'
 import JoinTelegram from './components/join-telegram/JoinTelegram'
+import BottomNav from './components/bottom-nav/BottomNav'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
   return (
     <HashRouter>
       <TopNav setProfileNav={setProfileNav} profileNav={profileNav} setIsOpen={setIsOpen} isOpen={isOpen} setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} baseUrl={baseUrl} desktopSidenav={desktopSidenav}/>
+      <BottomNav setProfileNav={setProfileNav} setCurrentModal={setCurrentModal}/>
       <div className='flex items-start'>
         <SideNav setIsOpen={setIsOpen} isOpen={isOpen} desktopSidenav={desktopSidenav} setCurrentModal={setCurrentModal}/>
         <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto mobile-view' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto mobile-view'} >
