@@ -78,7 +78,7 @@ const TopNav = ({profileNav, setProfileNav, setCurrentModal, setDesktopSideNav, 
 
       {
         profileNav &&
-        <div className='absolute bg-profile-nav-bg right-[10px] w-[200px] top-[75px] text-color py-2 rounded-[5px]'>
+        <div className='absolute bg-profile-nav-bg right-[10px] w-[200px] top-[65px] text-color py-2 rounded-[5px]'>
           <div onClick={() => {
             setProfileNav(false)
             setCurrentModal('wallet')

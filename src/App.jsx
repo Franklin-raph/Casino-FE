@@ -21,6 +21,7 @@ import ProfilePic from './components/profile-pic/ProfilePic'
 import Withdraw from './components/withdraw/Withdraw'
 import JoinTelegram from './components/join-telegram/JoinTelegram'
 import BottomNav from './components/bottom-nav/BottomNav'
+import ComingSoon from './components/coming-soon/ComingSoon'
 
 function App() {
 
@@ -91,6 +92,11 @@ function App() {
       {
         currentModal === 'withdraw' &&
         <Withdraw setCurrentModal={setCurrentModal} baseUrl={baseUrl}/>
+      }
+
+      {
+        currentModal === 'coming-soon' &&
+        <ComingSoon setCurrentModal={setCurrentModal}/>
       }
     </HashRouter>
   )
