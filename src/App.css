@@ -171,16 +171,26 @@
   overflow: hidden;
 }
 
-.mobile-nav, .nav-toggle-2, .mobile-nav-backdrop-filter{
+.mobile-nav, .nav-toggle-2, .mobile-nav-backdrop-filter, .mobile-cards{
   display: none !important;
 }
 
+.desktop-cards{
+  display: block !important;
+}
+
+.footer{
+  user-select: none;
+}
+
+
+
 @media screen and (max-width:900px) {
-  .nav-toggle-1, .desktop-nav{
+  .nav-toggle-1, .desktop-nav, .desktop-cards{
     display: none !important;
   }
 
-  .nav-toggle-2,.mobile-nav{
+  .nav-toggle-2,.mobile-nav, .mobile-cards{
     display: block !important;
   }
 
@@ -208,5 +218,13 @@
   .mobile-nav.open {
     left: 0; /* Visible when open */
     transition: left 0.3s ease-in-out;
+  }
+
+  .card-parent:hover .hover-bg{
+    display: none;
+  }
+
+  .mobile-hover{
+    display: block !important;
   }
 }

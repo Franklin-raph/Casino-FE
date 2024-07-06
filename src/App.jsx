@@ -28,15 +28,16 @@ function App() {
   const baseUrl = "https://heavyheat56.pythonanywhere.com"
 
   const [isOpen, setIsOpen] = useState(false);
+  const [profileNav, setProfileNav] = useState(false)
 
   return (
     <HashRouter>
-      <TopNav setIsOpen={setIsOpen} isOpen={isOpen} setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} baseUrl={baseUrl} desktopSidenav={desktopSidenav}/>
+      <TopNav setProfileNav={setProfileNav} profileNav={profileNav} setIsOpen={setIsOpen} isOpen={isOpen} setCurrentModal={setCurrentModal} setDesktopSideNav={setDesktopSideNav} baseUrl={baseUrl} desktopSidenav={desktopSidenav}/>
       <div className='flex items-start'>
         <SideNav setIsOpen={setIsOpen} isOpen={isOpen} desktopSidenav={desktopSidenav} setCurrentModal={setCurrentModal}/>
         <div className={desktopSidenav ? 'pt-[5rem] bg-primary-color w-[82%] ml-auto mobile-view' : 'pt-[5rem] bg-primary-color w-[95%] ml-auto mobile-view'} >
           <Routes>
-            <Route path="/" element={<Home setCurrentModal={setCurrentModal}/>} />
+            <Route path="/" element={<Home setCurrentModal={setCurrentModal} setProfileNav={setProfileNav} setIsOpen={setIsOpen}/>} />
             <Route path="/casual" element={<Casual baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
             <Route path="/shows" element={<Shows baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />
             <Route path='/live' element={<Live baseUrl={baseUrl} setCurrentModal={setCurrentModal}/>} />

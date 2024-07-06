@@ -69,8 +69,8 @@ const Register = ({setCurrentModal, baseUrl}) => {
 
   return (
     <div>
-      <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[100]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
-      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-6 md:max-w-[700px] mx-auto w-[90%] z-[101] fixed top-[56%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[530px] overflow-y-scroll">
+      <div className="h-full w-full fixed top-0 left-0 bg-opacity-50 backdrop-filter backdrop-blur-sm inset-0 z-[10004]" style={{ background:"rgba(14, 14, 14, 0.5)" }} onClick={() => setCurrentModal('')}></div>
+      <div className="bg-gray-900 text-white rounded-lg shadow-lg p-6 md:max-w-[700px] mx-auto w-[90%] z-[10005] fixed top-[56%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[530px] overflow-y-scroll">
         <img src="./images/logo.png" className='mx-auto mb-4 w-[100px]' alt="" />
         <div className=''>
           <div className="flex justify-between items-center mb-8">

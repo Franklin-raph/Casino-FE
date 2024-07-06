@@ -75,7 +75,7 @@ const Footer = () => {
 
 
   return (
-    <div>
+    <div className='footer'>
       <div className='bg-profile-nav-bg flex items-start justify-between flex-col gap-[2rem] md:gap-[2rem] mt-[2rem] py-[3rem] lg:px-12 px-6'>
         <div className='grid md:grid-cols-4 grid-cols-2 gap-[2rem] w-full text-[14px]'>
           <div>

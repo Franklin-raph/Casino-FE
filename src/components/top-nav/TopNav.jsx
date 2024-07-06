@@ -14,10 +14,10 @@ import { FaPlus } from "react-icons/fa6";
 import Cookies from 'js-cookie';
 import { TbCurrencyNaira } from 'react-icons/tb';
 
-const TopNav = ({setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl, isOpen, setIsOpen}) => {
+const TopNav = ({profileNav, setProfileNav, setCurrentModal, setDesktopSideNav, desktopSidenav, baseUrl, isOpen, setIsOpen}) => {
 
   const navigate = useNavigate()
-  const [profileNav, setProfileNav] = useState(false)
+  // const [profileNav, setProfileNav] = useState(false)
   const user = Cookies.get('token')
   const userProfile = JSON.parse(localStorage.getItem('user_details'))
   // console.log(JSON.parse(localStorage.getItem('user_details')).profile_pic);
